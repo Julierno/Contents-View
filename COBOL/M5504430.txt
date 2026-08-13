@@ -1,0 +1,3037 @@
+000100*       M5504430            LEVEL=43       DATE=97.08.04
+000200*****************************************************************
+000300*                                                               *
+000400* システム名　　　：輸出管理システム　　　　　　　　　　　　　  *
+000500* プログラム名　　：インボイス照会・更新（第三画面）            *
+000600* プログラムＩＤ　：Ｍ５５０４４３０                            *
+000700* 作成日　　　　　：９７年　８月　１日                          *
+000800* 更新日　　　　　：　　年　　月　　日                          *
+000900*         　　　　：９７年　９月１６日７４下期システム変更      *
+001000*  国内＄建取引判定ＰＲＧ追加   98.03.26   64350                *
+001100*  仲介用コード修正             98.06.23 M.NISHINA              *
+001200*  梱包実績情報追加             98.08.03 T.HASUMI(SHN)          *
+001300*  SSC(3928236/3928225)追加     99.10.01 H.KOKUBO               *
+001400*  原産地対応 仲介分            00.01.20 OST                    *
+001500*  梱包実績情報ＶＳＡＭ化       00.02.03 KUWASHIMA              *
+001600*  SSC(3928226)        追加     00.06.21 H.KOKUBO               *
+001700*  ＪＣＨＧＫＧＲ変更対応       00.09.14 NEGISHI                * 000914
+001800*  ユーロ建運用対応             00.11.10 NEGISHI                * 001110
+001900*  SSC(3928203)        追加     01.02.01 H.KOKUBO               *
+002000*  SSE(3929110/3929112/3929040)追加   01.07.11  H.KOKUBO        * 010711
+002100*  SSC-TOMSON(\) 3928720        01.10.25 H.KOKUBO               * 011025
+002200*  SSHK-HPC-TV(3923980)         01.11.21 DS.TAKAMIZAWA          * 011121
+002300*  SSDC-SP    (3923970)         01.12.18 DS.TAKAMIZAWA          * 011218
+002400*  SSE-$      (3929200)         01.12.19 DS.TAKAMIZAWA          * 011219
+002500***   ７９上期システム変更対応    2002/03/20   T.TERADA(SHN)    * 020320
+002600*  DCB-SSP (3910800･3910801･3910802) 02.06.06 DS.TAKAMIZAWA     * 020606
+002700*  SSHK-HK\   (3924060)         02.06.06  DS.TAKAMIZAWA         * 020606
+002800*  SSE-MOTOROLA-$ (3929210)     02.07.23  N.KANEKO              * 020723
+002900*  SSDC-SP(\) (3923971)         02.08.26  N.KANEKO              * 020826
+003000*  SSDC-HK    (3910900)         02.08.29  DS.TAKAMIZAWA         * 020829
+003100*  SSDC-SP KWE(3923972)         02.09.02  N.KANEKO              * 020902
+003200*  SSC-NJ-S   (3928260)         02.09.13  DS.TAKAMIZAWA         * 020913
+003300*  SSC-IL-S   (3928261)         02.09.13  DS.TAKAMIZAWA         * 020913
+003400*  SSC-SD-S   (3928262)         02.09.13  DS.TAKAMIZAWA         * 020913
+003500*  SSC-SJ-S   (3928263)         02.09.13  DS.TAKAMIZAWA         * 020913
+003600*  SSC-SSD-S  (3928224)         02.09.13  DS.TAKAMIZAWA         * 020913
+003700*  SSC-THOMSON-S (3928227)      02.09.13  DS.TAKAMIZAWA         * 020913
+003800***   ７９下期システム変更対応  02.09.26  DS.TAKAMIZAWA         * 020926
+003900*  SSE-EUR-D     (3929140)      02.10.18  DS.TAKAMIZAWA         * 021018
+004000*  SSE-EUR-F     (3929141)      02.10.18  DS.TAKAMIZAWA         * 021018
+004100*  SSE-URO-UK    (3929142)      02.10.18  DS.TAKAMIZAWA         * 021018
+004200*  SSE-USD-D     (3929150)      02.10.18  DS.TAKAMIZAWA         * 021018
+004300*  SSE-USD-F     (3929151)      02.10.18  DS.TAKAMIZAWA         * 021018
+004400*  SSE-USD-UK    (3929152)      02.10.18  DS.TAKAMIZAWA         * 021018
+004500*  SSE-MOTOROLA  (3929211)      02.10.18  DS.TAKAMIZAWA         * 021018
+004600*  SSE-NOKIA     (3929114)      02.10.18  DS.TAKAMIZAWA         * 021018
+004700*  SSE-JPY-D     (3929160)      02.10.18  DS.TAKAMIZAWA         * 021018
+004800*  SSE-JPY-F     (3929161)      02.10.18  DS.TAKAMIZAWA         * 021018
+004900*  SSE-JPY-UK    (3929162)      02.10.18  DS.TAKAMIZAWA         * 021018
+005000*  SSC-OTHERS-S  (3928204)      02.11.01  DS.TAKAMIZAWA         * 021101
+005100*  SSC-2-S       (3928205)      03.02.27  DS.TAKAMIZAWA         * 030227
+005200*  SSHK-MOTOROLA (3923985)      03.04.24  DS.TAKAMIZAWA         * 030424
+005300*  SSDC-SP KWE-MK(3923974)      03.05.14  DS.TAKAMIZAWA         * 030514
+005400***   ８０下期システム変更対応  03.09.16  DS.TAKAMIZAWA         * 030916
+005500*  SSHK-CHINA    (3923951)      03.10.01  DS.TAKAMIZAWA         * 031001
+005600*  SSE-NOKIA-YEN (3929115)      03.10.01  DS.TAKAMIZAWA         * 031001
+005700*  入力ﾊﾟﾀｰﾝ追加対応（39　→　78）    04.02.13     TAKAMIZAWA   *
+005800*                                     04.05.13     移行         *
+005900***   ８１上期システム変更対応  04.03.25  DS.TAKAMIZAWA         * 040325
+006000***   ８１上期デバイス部門新設  04.04.20  DS.TAKAMIZAWA         * 040420
+006100*  SSDC-HK KWE   (3910902)      04.05.20  DS.TAKAMIZAWA         * 040520
+006200*  SSHK-KOREA $  (3923955)      04.05.20  DS.TAKAMIZAWA         * 040520
+006300*  SSHK-ｻﾝｾｲﾃﾞﾝｷSEMHK$(3921141) 04.06.29  DS.TAKAMIZAWA         * 040629
+006400***   ８２上期システム変更対応  05.03.17  DS.TAKAMIZAWA         * 050317
+006500*  マイコン用途区分チェック仕様変更対応   05.07.22              * 050722
+006600*  （収支='3F' AND 指定製品Ｇｒの時は'ﾏｲｺﾝﾖｳﾄ'ｴﾗｰとしない）
+006700*****************************************************************
+006800 IDENTIFICATION                  DIVISION.
+006900 PROGRAM-ID.                     M5504430.
+007000 AUTHOR.                         NAV.
+007100*
+007200 ENVIRONMENT                     DIVISION.
+007300 CONFIGURATION                   SECTION.
+007400 SOURCE-COMPUTER.                FACOM.
+007500 OBJECT-COMPUTER.                FACOM.
+007600 SUBSCHEMA-NAME.                 'S55044'.
+007700*
+007800 SPECIAL-NAMES.
+007900     CONSOLE  IS                 CONS.
+008000*
+008100 INPUT-OUTPUT                    SECTION.
+008200 FILE-CONTROL.
+008300*
+008400** 表示ファイル　　
+008500     COPY                        CBLANY.
+008600**
+008700     SELECT  IPH-F               ASSIGN      IPH
+008800             ACCESS              MODE        DYNAMIC
+008900             ORGANIZATION                    INDEXED
+009000             RECORD              KEY         IPH-KEY
+009100             FILE STATUS         IS          IPH--STATUS.
+009200*
+009300     SELECT  IPB-F               ASSIGN      IPB
+009400             ACCESS              MODE        DYNAMIC
+009500             ORGANIZATION                    INDEXED
+009600             RECORD              KEY         IPB-KEY
+009700             FILE STATUS         IS          IPB--STATUS.
+009800*
+009900     SELECT  YKJ-F               ASSIGN      YKJ
+010000             ACCESS              MODE        DYNAMIC
+010100             ORGANIZATION                    INDEXED
+010200             RECORD              KEY         YKJ-KEY
+010300             FILE STATUS         IS          YKJ--STATUS.
+010400*
+010500     SELECT  CMK-F               ASSIGN      CMK
+010600             ACCESS              MODE        DYNAMIC
+010700             ORGANIZATION                    INDEXED
+010800             RECORD              KEY         CMK-KEY
+010900             FILE STATUS         IS          CMK--STATUS.
+011000*
+011100     SELECT  TFM-F               ASSIGN      TFM
+011200             ACCESS              MODE        DYNAMIC
+011300             ORGANIZATION                    INDEXED
+011400             RECORD              KEY         TFM-KEY
+011500             FILE STATUS         IS          TFM--STATUS.
+011600*
+011700     SELECT  TKN-F               ASSIGN      TKN
+011800             ACCESS              MODE        DYNAMIC
+011900             ORGANIZATION                    INDEXED
+012000             RECORD              KEY         TKN-KEY
+012100             FILE STATUS         IS          TKN--STATUS.
+012200*
+012300     SELECT  HKT-F               ASSIGN      HKT
+012400             ACCESS              MODE        DYNAMIC
+012500             ORGANIZATION                    INDEXED
+012600             RECORD              KEY         HKT-KEY
+012700             FILE STATUS         IS          HKT--STATUS.
+012800*
+012900     SELECT  CTN-F               ASSIGN      CTN
+013000             ACCESS              MODE        DYNAMIC
+013100             ORGANIZATION                    INDEXED
+013200             RECORD              KEY         CTN-KEY
+013300             FILE STATUS         IS          CTN--STATUS.
+013400*
+013500     SELECT  HDP-F               ASSIGN      HDP
+013600             ACCESS              MODE        DYNAMIC
+013700             ORGANIZATION                    INDEXED
+013800             RECORD              KEY         HDP-KEY
+013900             FILE STATUS         IS          HDP--STATUS.
+014000*
+014100     SELECT  ZAI-F               ASSIGN      ZAI
+014200             ACCESS              MODE        SEQUENTIAL.
+014300*
+014400*    SELECT  KPJ-F               ASSIGN      TO     KPJ.          980803TH
+014500*
+014600     SELECT  KNP-F               ASSIGN  KNP
+014700             ACCESS              MODE    DYNAMIC
+014800             ORGANIZATION        IS      INDEXED
+014900             RECORD              KEY     KNP-KEY
+015000             FILE STATUS         IS      KNP--STATUS.
+015100* マイコン用途チェック用製品Ｇｒテーブル                          050722
+015200     SELECT  DIA                 ASSIGN      TO     U99.          050722TH
+015300*
+015400 I-O-CONTROL.
+015500     APPLY   SAVED-AREA          TO  SPA55044.
+015600*
+015700 DATA                            DIVISION.
+015800 FILE                            SECTION.
+015900*================================================================*
+016000*  表示ファイル　　
+016100*================================================================*
+016200     COPY                        CBLDCFIL.
+016300*================================================================*
+016400*  ＩＮＶ発行（ヘッダ）
+016500*================================================================*
+016600 FD  IPH-F
+016700     LABEL   RECORD              STANDARD.
+016800     COPY                        LBL55014.
+016900*================================================================*
+017000*  ＩＮＶ発行（ボディ）
+017100*================================================================*
+017200 FD  IPB-F
+017300     LABEL   RECORD              STANDARD.
+017400     COPY                        LBL55015.
+017500*================================================================*
+017600*  輸出管理
+017700*================================================================*
+017800 FD  YKJ-F   IS   EXTERNAL
+017900     LABEL   RECORD              STANDARD.
+018000     COPY                        LBL55001.
+018100*================================================================*
+018200*  ケースマーク管理
+018300*================================================================*
+018400 FD  CMK-F
+018500     LABEL   RECORD              STANDARD.
+018600     COPY                        LBL55018.
+018700*================================================================*
+018800*  東京ファミリ
+018900*================================================================*
+019000 FD  TFM-F
+019100     LABEL   RECORD              STANDARD.
+019200     COPY                        LBL55009.
+019300*================================================================*
+019400*  輸出品名
+019500*================================================================*
+019600 FD  TKN-F
+019700     LABEL   RECORD              STANDARD.
+019800     COPY                        LBL55019.
+019900*================================================================*
+020000*  製品コード引当マスタ
+020100*================================================================*
+020200 FD  HKT-F
+020300     LABEL   RECORD              STANDARD.
+020400     COPY                        LBL30030.
+020500*================================================================*
+020600*  カートンＮＯファイル
+020700*================================================================*
+020800 FD  CTN-F
+020900     LABEL   RECORD              STANDARD.
+021000     COPY                        LBL55055.
+021100*================================================================*
+021200*  発送伝票ファイル
+021300*================================================================*
+021400 FD  HDP-F
+021500     LABEL   RECORD              STANDARD.
+021600     COPY                        LBL55010.
+021700*================================================================*
+021800*  材料コードファイル（カード）
+021900*================================================================*
+022000 FD  ZAI-F
+022100     LABEL   RECORD              STANDARD.
+022200     COPY                        LBL55034.
+022300*================================================================*980803TH
+022400*  梱包実績情報ファイル (M86.M8681370,SSP000)                    *980803
+022500*================================================================*980803TH
+022600*FD  KPJ-F                                                        980803TH
+022700*    LABEL   RECORD              STANDARD.                        980803TH
+022800*    COPY                        LBL55086.                        980803TH
+022900*================================================================*980803TH
+023000*  梱包実績情報ファイル                                          *980803
+023100*================================================================*980803TH
+023200 FD  KNP-F                                                        980803TH
+023300     LABEL   RECORD              STANDARD.                        980803TH
+023400     COPY                        LBL55089.                        980803TH
+023500*================================================================*050722TH
+023600* マイコン用途チェック用製品Ｇｒテーブル                          050722
+023700*================================================================*050722TH
+023800 FD  DIA                                                          050722TH
+023900     LABEL   RECORD              STANDARD.                        050722TH
+024000 01  DIA-REC.                                                     050722TH
+024100     03  DIA-KCD                 PIC  X(04).                      050722TH
+024110     03  DIA-FIL                 PIC  X(76).                      050722TH
+024200/
+024300*================================================================*
+024400*        ワーク領域                                              *
+024500*================================================================*
+024600 WORKING-STORAGE                 SECTION.
+024700*
+024800 01  IPH--STATUS                 PIC  X(02).
+024900 01  IPB--STATUS                 PIC  X(02).
+025000 01  YKJ--STATUS                 PIC  X(02).
+025100 01  CMK--STATUS                 PIC  X(02).
+025200 01  TFM--STATUS                 PIC  X(02).
+025300 01  TKN--STATUS                 PIC  X(02).
+025400 01  HKT--STATUS                 PIC  X(02).
+025500 01  CTN--STATUS                 PIC  X(02).
+025600 01  HDP--STATUS                 PIC  X(02).
+025700 01  KNP--STATUS                 PIC  X(02).
+025800*
+025900 01  WC          PIC 9(02)        VALUE ZERO.
+026000 01  WD          PIC 9(02)        VALUE ZERO.
+026100*                                                                 00042800
+026200 01  WRK-SUZ.
+026300     05  WRK-BUN     PIC X(01)  OCCURS  20.
+026400*                                                                 00042800
+026500 01  INDEX-AREA.
+026600     03  IX1                     PIC  9(03).
+026700     03  IX2                     PIC  9(03).
+026800     03  IX3                     PIC  9(03).
+026900     03  IX4                     PIC  9(03).
+027000     03  IX5                     PIC  9(02).                      980803TH
+027100*
+027200 01  DCFILE-OPEN-FLG             PIC  X(01)  VALUE  SPACE.
+027300 01  FLG-AREA.
+027400     03  FLG-DENSYU              PIC  X(01).
+027500     03  FLG-READ                PIC  X(03).
+027600     03  FLG-ERR                 PIC  X(03).
+027700     03  FLG-END                 PIC  X(03).
+027800     03  FLG-INV                 PIC  X(03).
+027900     03  FLG-GYO                 PIC  X(03).
+028000     03  FLG-GYO2                PIC  X(03).
+028100     03  FLG-SET                 PIC  X(01).
+028200     03  FLG-ZAI                 PIC  X(03).                      970128JF
+028300     03  FLG-CHK                 PIC  X(03).                      970128JF
+028400     03  FLG-KPJ                 PIC  X(02).                      980803TH
+028500     03  SW-KPJ                  PIC  X(03).                      980803TH
+028600 01  MSG-CD                      PIC  9(02).
+028700*                                < ｲﾝﾃﾞﾂｸｽ ｴﾘｱ >                  970128JF
+028800 01  IX-AREA.                                                     970128JF
+028900     03  IX                      PIC  9(03).                      970128JF
+029000*
+029100 01  WORK-AREA.
+029200     03  WK-DATE1.
+029300         05  WK-YY1              PIC  9(02).
+029400         05  WK-YMD1             PIC  9(06).
+029500     03  WK-DATE2.
+029600         05  WK-YY2              PIC  9(02).
+029700         05  WK-YMD2             PIC  9(06).
+029800     03  DIA-FLG                 PIC  X(03)   VALUE   SPACE.      050727TH
+029900     03  DIA-CNT                 PIC  9(07)   VALUE   ZERO.       050727
+030000     03  FLG-3F                  PIC  X(02).                      050727TH
+030100*
+030200 01  WRK-ATTR                    PIC  X(01).
+030300 01  WRK-SURYO                   PIC  9(06).
+030400 01  WRK-SUU                     PIC  9(06).                      980803TH
+030500 01  WRK-IDEXS.                                                   980803TH
+030600     05  WRK-IDEX                PIC  9(01).                      980803TH
+030700 01  WRK-IDEXSR     REDEFINES    WRK-IDEXS.                       980803TH
+030800     05  WRK-IDEXX               PIC  X(01).                      980803TH
+030900 01  WRK-CURT.                                                    980803TH
+031000     05  WRK-CUR                 PIC  9(04).                      980803TH
+031100 01  WRK-CURTR      REDEFINES    WRK-CURT.                        980803TH
+031200     05  WRK-CURX                PIC  X(04).                      980803TH
+031300 01  WRK-DENO                    PIC  X(04).
+031400 01  WRK-SEIN                    PIC  X(20).
+031500*入力内容退避
+031600 01  WRK-INPUT-AREA.
+031700     03  WRK-IN-DENO          PIC  X(04).
+031800     03  WRK-IN-SEIN          PIC  X(20).
+031900     03  WRK-IN-TANC          PIC  X(01).
+032000     03  WRK-IN-CASE          PIC  X(03).
+032100     03  WRK-IN-ILNO          PIC  X(15).
+032200     03  WRK-IN-PONO          PIC  X(10).
+032300     03  WRK-IN-PEDA          PIC  X(03).
+032400     03  WRK-IN-SURY          PIC  9(06).
+032500     03  WRK-IN-PN            PIC  X(15).
+032600     03  WRK-IN-TANK          PIC S9(06)V9(04).
+032700     03  WRK-IN-CN.
+032800*@@@   05  WRK-IN-CNTBL       OCCURS  39.
+032900       05  WRK-IN-CNTBL       OCCURS  78.                         040213
+033000         07  WRK-IN-SNO       PIC  9(04)   COMP-3.
+033100         07  WRK-IN-ENO       PIC  9(04)   COMP-3.
+033200         07  WRK-IN-CSU       PIC  9(06)   COMP-3.
+033300*+++ OST ADD START
+033400         07  WRK-IN-GEN       PIC  X(10).
+033500*+++ OST ADD END
+033600     03  WRK-IN-HN.
+033700       05  WRK-IN-SEIN1       PIC  X(20).
+033800       05  WRK-IN-TANK1       PIC S9(06)V9(04).
+033900       05  WRK-IN-SEIN2       PIC  X(20).
+034000       05  WRK-IN-TANK2       PIC S9(06)V9(04).
+034100       05  WRK-IN-SEIN3       PIC  X(20).
+034200       05  WRK-IN-TANK3       PIC S9(06)V9(04).
+034300*製品名 '-' ' ' 削除
+034400 01  WRK-SEIN-AREA.
+034500     03  WRK-SEIN-FLG            PIC  9(01).
+034600     03  WRK-SEIN-IX1            PIC  9(02).
+034700     03  WRK-SEIN-IX2            PIC  9(02).
+034800     03  WRK-IX1                 PIC  9(02).
+034900     03  WRK-IX2                 PIC  9(02).
+035000     03  WRK-SEIN-G.
+035100       05  WRK-SEIN-X            PIC  X(01)  OCCURS  20.
+035200     03  WRK-SEIN-GG.
+035300       05  WRK-SEIN-XX           PIC  X(01)  OCCURS  20.
+035400*ｶｰﾄﾝNO ﾀｲﾋ
+035500 01  WRK-CN-AREA.
+035600*@@@ 03  WRK-CN-TBL              OCCURS   40.
+035700     03  WRK-CN-TBL              OCCURS   79.                     040213
+035800       05  WRK-SNO               PIC  9(05)          COMP-3.
+035900       05  WRK-ENO               PIC  9(05)          COMP-3.
+036000       05  WRK-CSU               PIC  9(06)          COMP-3.
+036100*+++  2000/1/25  OST ADD & UPDATE START
+036200       05  WRK-GEN               PIC  X(10).
+036300*+++  ADD & UPDATE END
+036400*********
+036500 01  OUT-AREA                    PIC  X(10)  VALUE   LOW-VALUE.
+036600 01  WRK-MCD                     PIC  X(14)  VALUE   SPACE.
+036700 01  WRK-IPB                     PIC  X(280) VALUE   SPACE.
+036800*
+036900* サーチ用テーブル
+037000 01  TBL-AREA.
+037100     03  TBL-KCD-G       OCCURS  30    INDEXED  BY  IDX.
+037200         05  TBL-KCD              PIC  X(04).   *>管理コード
+037300* ＳＰＡ領域
+037400*@@@ COPY                        SPA55044.
+037500     COPY                        TPA55044.                        040213
+037600* 画面領域
+037700     COPY                        P5504430.
+037800/
+037900     COPY                        DCMSG551.
+038000     COPY                        ANYDCCTR.
+038100     COPY                        CBLTMCTR.
+038200     COPY                        NPDATEP.
+038300     COPY                        M55C80C.
+038400     COPY                        LBL30047.
+038500     COPY                        SB64WK.
+038600*
+038700*--< ＄建変換　処理年月算出ワーク >                               980326
+038800     COPY   SBRATWK.                                              980326
+038900*
+039000*@  得意先検索パラメータ
+039100    COPY LBJCHGCK.                                                980623MN
+039200*
+039300/
+039400 PROCEDURE                       DIVISION.
+039500*================================================================*
+039600*    異常処理出口                                                *
+039700*================================================================*
+039800 DECLARATIVES.
+039900*
+040000 VSAM-EXCP                       SECTION.
+040100     USE  AFTER  STANDARD  EXCEPTION
+040200          PROCEDURE  ON    IPH-F   IPB-F   YKJ-F   CMK-F
+040300                           TFM-F   TKN-F   HKT-F   CTN-F
+040400                           HDP-F.
+040500     DISPLAY  '/*/*/ M5504430 ABEND IPH STATUS=' IPH--STATUS
+040600                                        ' /*/*/'  UPON CONS.
+040700     DISPLAY  '/*/*/ M5504430 ABEND IPB STATUS=' IPB--STATUS
+040800                                        ' /*/*/'  UPON CONS.
+040900     DISPLAY  '/*/*/ M5504430 ABEND YKJ STATUS=' YKJ--STATUS
+041000                                        ' /*/*/'  UPON CONS.
+041100     DISPLAY  '/*/*/ M5504430 ABEND CMK STATUS=' CMK--STATUS
+041200                                        ' /*/*/'  UPON CONS.
+041300     DISPLAY  '/*/*/ M5504430 ABEND TFM STATUS=' TFM--STATUS
+041400                                        ' /*/*/'  UPON CONS.
+041500     DISPLAY  '/*/*/ M5504430 ABEND TKN STATUS=' TKN--STATUS
+041600                                        ' /*/*/'  UPON CONS.
+041700     DISPLAY  '/*/*/ M5504430 ABEND HKT STATUS=' HKT--STATUS
+041800                                        ' /*/*/'  UPON CONS.
+041900     DISPLAY  '/*/*/ M5504430 ABEND CTN STATUS=' CTN--STATUS
+042000                                        ' /*/*/'  UPON CONS.
+042100     DISPLAY  '/*/*/ M5504430 ABEND HDP STATUS=' HDP--STATUS
+042200                                        ' /*/*/'  UPON CONS.
+042300
+042400     IF  DCFILE-OPEN-FLG  NOT =  '1'
+042500         EXIT  PROGRAM
+042600     END-IF.
+042700     GO  TO    M000-END.
+042800*
+042900 DB-EXCP    SECTION.
+043000     USE FOR     DB-EXCEPTION.
+043100        DISPLAY  'AP=M5504430 ABEND  DBECB' DBECB ' RDNAME'
+043200                  RDNAME ' ######' UPON  CONS.
+043300     GO  TO    M000-END.
+043400*
+043500 D-LOCK     SECTION.
+043600     USE FOR     DEAD-LOCK.
+043700         DISPLAY 'AP=' 'M5504430' 'DEAD-LOCK  ######' UPON CONS.
+043800                         GO  TO  S100-DREAD.
+043900 END DECLARATIVES.
+044000*
+044100*================================================================*
+044200*    ＭＡＩＮ処理                                                *
+044300*================================================================*
+044400*********************************************
+044500*    初期処理                               *
+044600*********************************************
+044700 M000                            SECTION.
+044800 M000-000.
+044900*
+045000*--- JCHGRATに西暦年月日設定                                      980326
+045100     MOVE   FUNCTION  CURRENT-DATE  TO   CHG-YMD.                 980326
+045200*
+045300     MOVE    SPACE               TO   DCFILE-OPEN-FLG.
+045400     OPEN    I-O             DC-FILE.
+045500     OPEN    INPUT           IPH-F.
+045600     OPEN    I-O             IPB-F.
+045700     OPEN    INPUT           YKJ-F.
+045800     OPEN    INPUT           CMK-F.
+045900     OPEN    INPUT           TFM-F.
+046000     OPEN    INPUT           TKN-F.
+046100     OPEN    INPUT           HKT-F.
+046200     OPEN    I-O             CTN-F.
+046300     OPEN    INPUT           HDP-F.
+046400     OPEN    INPUT           KNP-F.
+046500     OPEN    INPUT           DIA.                                 050727
+046600     MOVE    SPACE               TO   C80-PARA.
+046700     MOVE   '1'                  TO   C80-OPEN.
+046800     CALL   'M55C80'          USING   C80-PARA.
+046900     READY                'S55044'.
+047000     PERFORM   TBL-SET-RTN.                                       070527
+047100*
+047200     OPEN    INPUT    ZAI-F.
+047300     MOVE    SPACE    TO         SPA-TBL-AREA   FLG-ZAI.
+047400     READ    ZAI-F
+047500             AT  END      MOVE  'END'   TO    FLG-ZAI.
+047600     PERFORM VARYING  IX4 FROM  1  BY  1
+047700                          UNTIL  ( IX4  >  100 )
+047800                             OR  ( FLG-ZAI = 'END' )
+047900             MOVE     ZAI-MCD    TO      SPA-MCD(IX4)
+048000             READ     ZAI-F
+048100                      AT  END    MOVE  'END'  TO  FLG-ZAI
+048200             END-READ
+048300     END-PERFORM.
+048400     CLOSE   ZAI-F.
+048500*********************************************
+048600*    画面読込                               *
+048700*********************************************
+048800 M000-IREAD.
+048900     PERFORM   DCREAD-RTN.
+049000*  初期値設定
+049100     ACCEPT  SPA-SYS-DATE      FROM   DATE.
+049200     INITIALIZE                       FLG-AREA.
+049300     MOVE    ZERO                TO   MSG-CD.
+049400*********************************************
+049500*    処理判定　　　（ＭＡＩＮ）             *
+049600*********************************************
+049700     EVALUATE  SPA-TRNKBN
+049800*  初期画面表示
+049900               WHEN  0     PERFORM   SYOKI-RTN
+050000*  明細入力
+050100               WHEN  1     PERFORM   BODY-RTN
+050200*  確認入力
+050300               WHEN  2     PERFORM   KAKU-RTN
+050400     END-EVALUATE.
+050500*
+050600*********************************************
+050700*    画面出力                               *
+050800*********************************************
+050900     PERFORM   DCWRITE-RTN.
+051000*********************************************
+051100*    終了                                   *
+051200*********************************************
+051300 M000-END.
+051400*
+051500     CLOSE                     DC-FILE.
+051600     CLOSE                       IPH-F.
+051700     CLOSE                       IPB-F.
+051800     CLOSE                       YKJ-F.
+051900     CLOSE                       CMK-F.
+052000     CLOSE                       TFM-F.
+052100     CLOSE                       TKN-F.
+052200     CLOSE                       HKT-F.
+052300     CLOSE                       CTN-F.
+052400     CLOSE                       HDP-F.
+052500     CLOSE                       KNP-F.
+052510     CLOSE                       DIA.
+052600     MOVE    SPACE               TO   C80-PARA.
+052700     MOVE    '9'                 TO   C80-OPEN.
+052800     CALL    'M55C80'         USING   C80-PARA.
+052900     FINISH                      'S55044'.
+053000*
+053100     EXIT   PROGRAM.
+053200*********************************************
+053300*    ＤＵＭＭＹ　ＲＥＡＤ                   *
+053400*********************************************
+053500 S100-DREAD.
+053600     READ  DC-FILE.
+053700     GO    TO    M000-IREAD.
+053800*********************************************
+053900*    ＤＵＭＭＹ　ＷＲＩＴＥ                 *
+054000*********************************************
+054100 S100-DWRITE.
+054200     MOVE  SPACE                 TO   ANY-CTR-AREA.
+054300     GO    TO    M000-IREAD.
+054400*
+054500*
+054600*
+054700*================================================================*
+054800*    初期画面表示　　                                            *
+054900*================================================================*
+055000 SYOKI-RTN                      SECTION.
+055100 SYOKI-000.
+055200     MOVE    SPACE                 TO   P5504430-DATA.
+055300     IF      SPA-DSPFLG   =   SPACE
+055400             INITIALIZE                 SPA-443-AREA
+055500             MOVE    1             TO   SPA-443-PAGE
+055600     END-IF.
+055700* ヘッド部編集
+055800     MOVE    SPA-442-INVO          TO   O0443-INVO.
+055900     MOVE    SPA-442-ACCO          TO   O0443-ACCO.
+056000     MOVE    SPA-442-TUKA          TO   O0443-TUKA.
+056100* データ抽出
+056200     IF      SPA-DSPFLG   =   SPACE
+056300             MOVE    SPACE         TO   WRK-DENO
+056400                                        WRK-SEIN
+056500             PERFORM  IPB-START1-RTN
+056600             MOVE    ZERO          TO   IX1
+056700             PERFORM  SPA-SET-RTN
+056800                      UNTIL    FLG-READ  =  'END'
+056900     END-IF.
+057000* 明細部編集
+057100     PERFORM  BODY-SET-RTN.
+057200*
+057300     IF      MSG-CD         =  ZERO
+057400             MOVE    SPA-MSGCD     TO   MSG-CD
+057500             MOVE    SPA-ERR       TO   FLG-ERR
+057600     END-IF.
+057700     IF      MSG-CD         =  ZERO
+057800        AND (SPA-442-MODE   =  'ADD'  OR  'UPD')
+057900             MOVE      01          TO   MSG-CD
+058000     END-IF.
+058100     MOVE    SPACE                 TO   SPA-DSPFLG.
+058200     MOVE    ZERO                  TO   SPA-MSGCD.
+058300     MOVE    SPACE                 TO   SPA-ERR.
+058400*
+058500     IF      SPA-442-MODE   =  'ADD'  OR  'UPD'
+058600             MOVE      1           TO   SPA-TRNKBN
+058700     ELSE
+058800             MOVE      2           TO   SPA-TRNKBN
+058900     END-IF.
+059000     PERFORM  ATTR-SET-RTN.
+059100 SYOKI-RTN-EXT.
+059200     EXIT.
+059300*================================================================*
+059400*    ＩＮＶ発行（ボディ）のスタート処理　＞＝                    *
+059500*================================================================*
+059600 IPB-START1-RTN                 SECTION.
+059700 IPB-START1-000.
+059800* 退避領域の初期化
+059900     PERFORM     VARYING         IX2     FROM    1   BY  1
+060000                 UNTIL           IX2     >       5
+060100             INITIALIZE            SPA-443-TBL  (IX2)
+060200             INITIALIZE            SPA-443-O-TBL(IX2)
+060300     END-PERFORM.
+060400* ＫＥＹセット
+060500     MOVE    SPA-442-ACCO          TO   IPB-TKC.
+060600     MOVE    SPA-442-INVO          TO   IPB-INO.
+060700     MOVE    WRK-DENO              TO   IPB-DNO.
+060800     MOVE    SPACE                 TO   IPB-KBN.
+060900     MOVE    WRK-SEIN              TO   IPB-SNM.
+061000*
+061100     START   IPB-F        KEY      >=   IPB-KEY
+061200       INVALID        MOVE  'END'       TO    FLG-READ
+061300       NOT INVALID    MOVE  'OK '       TO    FLG-READ
+061400     END-START.
+061500 IPB-START1-EXT.
+061600     EXIT.
+061700*================================================================*
+061800*    ＩＮＶ発行（ボディ）のスタート処理　＞                      *
+061900*================================================================*
+062000 IPB-START2-RTN                 SECTION.
+062100 IPB-START2-000.
+062200* 退避領域の初期化
+062300     PERFORM     VARYING         IX2     FROM    1   BY  1
+062400                 UNTIL           IX2     >       5
+062500             INITIALIZE            SPA-443-TBL  (IX2)
+062600             INITIALIZE            SPA-443-O-TBL(IX2)
+062700     END-PERFORM.
+062800* ＫＥＹセット
+062900     MOVE    SPA-442-ACCO          TO   IPB-TKC.
+063000     MOVE    SPA-442-INVO          TO   IPB-INO.
+063100     MOVE    WRK-DENO              TO   IPB-DNO.
+063200     MOVE    SPACE                 TO   IPB-KBN.
+063300     MOVE    WRK-SEIN              TO   IPB-SNM.
+063400*
+063500     START   IPB-F        KEY      >    IPB-KEY
+063600       INVALID        MOVE  'END'       TO    FLG-READ
+063700       NOT INVALID    MOVE  'OK '       TO    FLG-READ
+063800     END-START.
+063900 IPB-START2-EXT.
+064000     EXIT.
+064100*================================================================*
+064200*    ＳＰＡの編集（ファイルより）                                *
+064300*================================================================*
+064400 SPA-SET-RTN                    SECTION.
+064500 SPA-SET-000.
+064600     IF      IX1      =     0
+064700                      MOVE  SPACE       TO    SPA-443-JDENO
+064800                                              SPA-443-JSEIN
+064900     END-IF.
+065000* ＩＮＶ発行ファイル読み込み ------------------------------------*
+065100     READ    IPB-F       NEXT
+065200       AT END         MOVE  'END'       TO    FLG-READ
+065300                      GO                TO    SPA-SET-EXT
+065400     END-READ.
+065500     IF      IPB-TKC     NOT =   SPA-442-ACCO
+065600         OR  IPB-INO     NOT =   SPA-442-INVO
+065700                      MOVE  'END'       TO    FLG-READ
+065800                      GO                TO    SPA-SET-EXT
+065900     END-IF.
+066000* 次頁情報の退避
+066100     IF      IX1      =     5
+066200                      MOVE  IPB-DNO     TO    SPA-443-JDENO
+066300                      MOVE  IPB-SNM     TO    SPA-443-JSEIN
+066400                      MOVE  'END'       TO    FLG-READ
+066500                      GO                TO    SPA-SET-EXT
+066600     END-IF.
+066700*
+066800     ADD     1                TO   IX1.
+066900* ＳＰＡへセット
+067000     MOVE    IPB-DNO          TO   SPA-443-DENO   (IX1).
+067100     MOVE    IPB-SNM          TO   SPA-443-SEIN   (IX1).
+067200     MOVE    IPB-TANI         TO   SPA-443-TANC   (IX1).
+067300     MOVE    IPB-KMK          TO   SPA-443-CASE   (IX1).
+067400     MOVE    IPB-IL           TO   SPA-443-ILNO   (IX1).
+067500     MOVE    IPB-PNO          TO   SPA-443-PONO   (IX1).
+067600     MOVE    IPB-BKA          TO   SPA-443-PEDA   (IX1).
+067700     MOVE    IPB-SUR          TO   SPA-443-SURY   (IX1).
+067800     MOVE    IPB-PN           TO   SPA-443-PN     (IX1).
+067900     MOVE    IPB-TNK          TO   SPA-443-TANK   (IX1).
+068000     MOVE    IPB-HN1          TO   SPA-443-SEIN1  (IX1).
+068100     MOVE    IPB-TN1          TO   SPA-443-TANK1  (IX1).
+068200     MOVE    IPB-HN2          TO   SPA-443-SEIN2  (IX1).
+068300     MOVE    IPB-TN2          TO   SPA-443-TANK2  (IX1).
+068400     MOVE    IPB-HN3          TO   SPA-443-SEIN3  (IX1).
+068500     MOVE    IPB-TN3          TO   SPA-443-TANK3  (IX1).
+068600*    98/12/23 ADD BY  KUWASHIMA
+068700     MOVE    IPB-NTB          TO   SPA-443-NTB    (IX1).
+068800     MOVE    IPB-SCO          TO   SPA-443-SCO    (IX1).
+068900*
+069000     MOVE    ZERO                  TO   IX2.
+069100     INITIALIZE                         SPA-443-CN (IX1).
+069200* カ－トンＮＯファイル読み込み ----------------------------------*
+069300     MOVE    SPA-442-ACCO          TO   CTN-TKC.
+069400     MOVE    SPA-442-INVO          TO   CTN-INO.
+069500     MOVE    SPA-443-DENO (IX1)    TO   CTN-DNO.
+069600     MOVE    SPACE                 TO   CTN-KBN.
+069700     MOVE    SPA-443-SEIN (IX1)    TO   CTN-SNM.
+069800     MOVE    ZERO                  TO   CTN-SEQ.
+069900*
+070000     START   CTN-F        KEY      >=   CTN-KEY
+070100       INVALID        GO                TO    SPA-SET-900
+070200     END-START.
+070300*
+070400 SPA-SET-600.
+070500     READ    CTN-F       NEXT
+070600       AT END         GO                TO    SPA-SET-900
+070700     END-READ.
+070800     IF      CTN-TKC     NOT =   SPA-442-ACCO
+070900         OR  CTN-INO     NOT =   SPA-442-INVO
+071000         OR  CTN-DNO     NOT =   SPA-443-DENO (IX1)
+071100         OR  CTN-SNM     NOT =   SPA-443-SEIN (IX1)
+071200                      GO                TO    SPA-SET-900
+071300     END-IF.
+071400*
+071500*//98/10/08 OST START HENKO
+071600* ＳＰＡへセット
+071700     ADD     1                     TO   IX2.
+071800     MOVE    CTN-SNO               TO   SPA-443-SNO  (IX1 IX2).
+071900     MOVE    CTN-ENO               TO   SPA-443-ENO  (IX1 IX2).
+072000*    IF      CTN-ENO      =     ZERO
+072100             MOVE    CTN-CSU       TO   SPA-443-CSU  (IX1 IX2)
+072200*    ELSE
+072300*            COMPUTE SPA-443-CSU  (IX1 IX2)   =
+072400*                         CTN-CSU  /  ( CTN-ENO  - CTN-SNO  + 1 )
+072500*    END-IF.
+072600*
+072700*+++ 2000/1/19  OST ADD START
+072800     MOVE    CTN-GEN               TO   SPA-443-GEN  (IX1 IX2).
+072900*+++ ADD END
+073000*
+073100     GO      TO    SPA-SET-600.
+073200*
+073300*//98/10/08 OST END.
+073400 SPA-SET-900.
+073500     MOVE    SPA-443-INPUT (IX1)   TO   SPA-443-O-TBL (IX1).
+073600*
+073700 SPA-SET-EXT.
+073800     EXIT.
+073900*================================================================*
+074000*    画面－明細部の編集（ＳＰＡより）                            *
+074100*================================================================*
+074200 BODY-SET-RTN                   SECTION.
+074300 BODY-SET-000.
+074400     MOVE    SPA-443-PAGE       TO   O0443-PAGE.
+074500*
+074600     PERFORM VARYING         IX1     FROM    1   BY  1
+074700             UNTIL           IX1     >       5
+074800             MOVE   SPACE               TO   I0443-BTBL (IX1)
+074900       IF    SPA-443-SEIN (IX1)  NOT =  SPACE
+075000             MOVE   SPA-443-KBN  (IX1)  TO   I0443-KBN  (IX1)
+075100             MOVE   SPA-443-DENO (IX1)  TO   I0443-DENO (IX1)
+075200*
+075300             MOVE SPA-443-SEIN(IX1) TO SPA-443-O-SEIN1(IX1)
+075400*
+075500***   ７９上期システム変更対応      T.TERADA(SHN)                 020320
+075600               IF  SPA-443-SCO (IX1)  =  '20128910000100'
+075700                                    OR   '20128920000100'
+075800                                    OR   '20128930000100'
+075900                                    OR   '20128940000100'
+076000                                    OR   '20128950000100'
+076100                                    OR   '20128960000100'
+076200                                    OR   '20128970000100'
+076300                                    OR   '20128980000100'
+076400                                    OR   '20128990000100'
+076500                                    OR   '20129000000100'
+076600                                    OR   '20129010000100'         020320
+076700                                    OR   '20129020000100'         020320
+076800                                    OR   '20129030000100'         020320
+076900                                    OR   '20129040000100'         020320
+077000                                    OR   '20129050000100'         040325
+077100                                    OR   '20129110000100'         030916
+077200                                    OR   '20129210000100'         030916
+077300                                    OR   '20129310000100'         040420
+077400                    PERFORM HKT-SET-RTN
+077500               END-IF
+077600*
+077700             MOVE   SPA-443-SEIN (IX1)  TO   I0443-SEIN (IX1)
+077800             MOVE   SPA-443-TANC (IX1)  TO   I0443-TANC (IX1)
+077900             MOVE   SPA-443-CASE (IX1)  TO   I0443-CASE (IX1)
+078000             MOVE   SPA-443-ILNO (IX1)  TO   I0443-ILNO (IX1)
+078100             MOVE   SPA-443-SEL  (IX1)  TO   I0443-SEL  (IX1)
+078200             MOVE   SPA-443-PONO (IX1)  TO   I0443-PONO (IX1)
+078300             MOVE   SPA-443-PEDA (IX1)  TO   I0443-PEDA (IX1)
+078400             MOVE   SPA-443-SURY (IX1)  TO   I0443-SURY (IX1)
+078500             MOVE   SPA-443-PN   (IX1)  TO   I0443-PN   (IX1)
+078600             MOVE   SPA-443-TANK (IX1)  TO   I0443-TANK (IX1)
+078700             EVALUATE  SPA-443-TANC (IX1)
+078800                 WHEN  '1'     MOVE  'PCS.'  TO  O0443-TANN(IX1)
+078900                 WHEN  '2'     MOVE  'SET.'  TO  O0443-TANN(IX1)
+079000                 WHEN  OTHER   MOVE  SPACE   TO  O0443-TANN(IX1)
+079100             END-EVALUATE
+079200         PERFORM VARYING         IX2     FROM    1   BY  1
+079300                 UNTIL           IX2     >       3
+079400             MOVE   SPA-443-SNO (IX1 IX2) TO I0443-SNO (IX1 IX2)
+079500             MOVE   SPA-443-ENO (IX1 IX2) TO I0443-ENO (IX1 IX2)
+079600             MOVE   SPA-443-CSU (IX1 IX2) TO I0443-CSU (IX1 IX2)
+079700         END-PERFORM
+079800       END-IF
+079900     END-PERFORM.
+080000 BODY-SET-EXT.
+080100     EXIT.
+080200*================================================================*
+080300*    前頁処理      　                                            *
+080400*================================================================*
+080500 ZEN-PAGE-RTN                   SECTION.
+080600 ZEN-PAGE-000.
+080700* ＰＦキーエラー
+080800     IF     SPA-TRNKBN          =   2
+080900       AND (SPA-442-MODE        =   'ADD'  OR  'UPD')
+081000            MOVE     'ERR'      TO   FLG-ERR
+081100            MOVE      08        TO   MSG-CD
+081200            GO                  TO   ZEN-PAGE-EXT
+081300     END-IF.
+081400* 前頁無し
+081500     IF     SPA-443-PAGE       <=   1
+081600            MOVE     'ERR'      TO   FLG-ERR
+081700            MOVE      47        TO   MSG-CD
+081800            GO                  TO   ZEN-PAGE-EXT
+081900     END-IF.
+082000* 前頁データの検索
+082100     MOVE   SPACE               TO   SPA-KPJ.
+082200     MOVE   SPACE               TO   FLG-READ.
+082300     PERFORM   UNTIL      FLG-READ  =  'OK '
+082400            COMPUTE  SPA-443-PAGE   =  SPA-443-PAGE  -  1
+082500            MOVE   SPA-443-ZDENO (SPA-443-PAGE)  TO  WRK-DENO
+082600            MOVE   SPA-443-ZSEIN (SPA-443-PAGE)  TO  WRK-SEIN
+082700            IF     SPA-443-PAGE  >   1
+082800              AND  WRK-DENO      =   SPACE
+082900              AND  WRK-SEIN      =   SPACE
+083000                   MOVE   HIGH-VALUE             TO  WRK-DENO
+083100                                                     WRK-SEIN
+083200            END-IF
+083300            PERFORM  IPB-START1-RTN
+083400            MOVE    ZERO               TO   IX1
+083500            PERFORM  SPA-SET-RTN
+083600                     UNTIL    FLG-READ  =  'END'
+083700*
+083800            IF     IX1  >  ZERO
+083900               OR  SPA-443-PAGE  =  1
+084000                   MOVE   'OK '        TO   FLG-READ
+084100            END-IF
+084200     END-PERFORM.
+084300* 画面編集
+084400     PERFORM  BODY-SET-RTN.
+084500     PERFORM  ATTR-SET-RTN.
+084600     IF     SPA-442-MODE        =   'ADD'  OR  'UPD'
+084700            MOVE    01          TO   MSG-CD
+084800     END-IF.
+084900*
+085000 ZEN-PAGE-EXT.
+085100     EXIT.
+085200*================================================================*
+085300*    次頁処理      　                                            *
+085400*================================================================*
+085500 JI-PAGE-RTN                    SECTION.
+085600 JI-PAGE-000.
+085700* ＰＦキーエラー
+085800     IF     SPA-TRNKBN          =   2
+085900       AND (SPA-442-MODE        =   'ADD'  OR  'UPD')
+086000            MOVE     'ERR'      TO   FLG-ERR
+086100            MOVE      08        TO   MSG-CD
+086200            GO                  TO   JI-PAGE-EXT
+086300     END-IF.
+086400*
+086500* 現在頁情報の退避
+086600     IF     SPA-443-PAGE        =   1
+086700            MOVE   SPACE        TO   SPA-443-ZDENO(SPA-443-PAGE)
+086800                                     SPA-443-ZSEIN(SPA-443-PAGE)
+086900     ELSE
+087000            MOVE   SPA-443-O-DENO(1)
+087100                                TO   SPA-443-ZDENO(SPA-443-PAGE)
+087200            MOVE   SPA-443-O-SEIN(1)
+087300                                TO   SPA-443-ZSEIN(SPA-443-PAGE)
+087400     END-IF.
+087500* 次頁無し（照会モード）
+087600     IF    (SPA-442-MODE   NOT  =   'ADD'  AND 'UPD')
+087700       AND (SPA-443-JDENO       =    SPACE
+087800        AND SPA-443-JSEIN       =    SPACE)
+087900            MOVE     'ERR'      TO   FLG-ERR
+088000            MOVE      48        TO   MSG-CD
+088100            GO                  TO   JI-PAGE-EXT
+088200     END-IF.
+088300* 頁カウント
+088400     IF     SPA-443-PAGE        <   50
+088500            COMPUTE  SPA-443-PAGE   =  SPA-443-PAGE  +  1
+088600     ELSE
+088700            PERFORM   VARYING    IX2     FROM    2    BY    1
+088800                      UNTIL      IX2       >    50
+088900                      MOVE   SPA-443-ZENPAGE (IX2)
+089000                                  TO  SPA-443-ZENPAGE (IX2 - 1)
+089100            END-PERFORM
+089200     END-IF.
+089300* 次データの検索
+089400     MOVE   SPACE               TO   SPA-KPJ.
+089500     MOVE   SPACE               TO   FLG-READ.
+089600     IF     SPA-443-JDENO    NOT =   SPACE
+089700        OR  SPA-443-JSEIN    NOT =   SPACE
+089800            MOVE   SPA-443-JDENO     TO   WRK-DENO
+089900            MOVE   SPA-443-JSEIN     TO   WRK-SEIN
+090000     ELSE
+090100            MOVE   HIGH-VALUE        TO   WRK-DENO
+090200                                          WRK-SEIN
+090300     END-IF.
+090400     PERFORM  IPB-START1-RTN.
+090500     MOVE    ZERO               TO   IX1.
+090600     PERFORM  SPA-SET-RTN
+090700                    UNTIL    FLG-READ  =  'END'.
+090800* 画面編集
+090900     PERFORM  BODY-SET-RTN.
+091000     PERFORM  ATTR-SET-RTN.
+091100     IF     SPA-442-MODE        =   'ADD'  OR  'UPD'
+091200            MOVE    01          TO   MSG-CD
+091300     END-IF.
+091400*
+091500 JI-PAGE-EXT.
+091600     EXIT.
+091700*================================================================*
+091800*    明細入力      　                                            *
+091900*================================================================*
+092000 BODY-RTN                       SECTION.
+092100 BODY-000.
+092200*
+092300     EVALUATE  ANY-FUNC
+092400*  実行
+092500         WHEN  'E000'      PERFORM  BODY-CHK-RTN
+092600*  取消
+092700         WHEN  'F004'      MOVE     'END'      TO    FLG-END
+092800*  前頁
+092900         WHEN  'F007'      PERFORM  ZEN-PAGE-RTN
+093000*  次頁
+093100         WHEN  'F008'      PERFORM  JI-PAGE-RTN
+093200*  ＰＦキーエラー
+093300         WHEN  OTHER       MOVE     'ERR'      TO    FLG-ERR
+093400                           MOVE      08        TO    MSG-CD
+093500     END-EVALUATE.
+093600 BODY-RTN-EXT.
+093700     EXIT.
+093800*================================================================*
+093900*    入力項目チェック（明細）                                    *
+094000*================================================================*
+094100 BODY-CHK-RTN                    SECTION.
+094200 BODY-CHK-000.
+094300*
+094400**********************************
+094500*        チェック開始            *
+094600**********************************
+094700* 入力項目のチェック
+094800      PERFORM       VARYING     IX1    FROM    1    BY   1
+094900                    UNTIL       IX1    >       5
+095000          PERFORM  BODY-CHK0-RTN
+095100          EVALUATE  FLG-DENSYU
+095200              WHEN  '1'         PERFORM  BODY-CHKA-RTN
+095300              WHEN  '2'         PERFORM  BODY-CHKB-RTN
+095400              WHEN  '3'         PERFORM  BODY-CHKB-RTN
+095500              WHEN  OTHER       CONTINUE
+095600          END-EVALUATE
+095700      END-PERFORM.
+095800* 選択区分のみ入力された時
+095900      PERFORM    VARYING     IX1    FROM    1    BY   1
+096000                 UNTIL       IX1    >       5
+096100         IF     SPA-443-KBN (IX1)     =   SPACE
+096200           AND (SPA-443-SEL (IX1) NOT =   SPACE  AND  'S')
+096300              MOVE    '7'            TO   I0443-SEL-C (IX1)
+096400              MOVE    'ERR'          TO   FLG-ERR
+096500              MOVE     01            TO   MSG-CD
+096600         END-IF
+096700      END-PERFORM.
+096800* 一行も入力されなかった時
+096900      IF      ( FLG-ERR              =   SPACE )
+097000          AND ( SPA-443-KBN  (01)    =   SPACE
+097100          AND   SPA-443-KBN  (02)    =   SPACE
+097200          AND   SPA-443-KBN  (03)    =   SPACE
+097300          AND   SPA-443-KBN  (04)    =   SPACE
+097400          AND   SPA-443-KBN  (05)    =   SPACE )
+097500          AND ( SPA-443-SEL  (01)    =   SPACE
+097600          AND   SPA-443-SEL  (02)    =   SPACE
+097700          AND   SPA-443-SEL  (03)    =   SPACE
+097800          AND   SPA-443-SEL  (04)    =   SPACE
+097900          AND   SPA-443-SEL  (05)    =   SPACE )
+098000              MOVE    'I'            TO   I0443-KBN (1)
+098100              MOVE    'ERR'          TO   FLG-ERR
+098200              MOVE     49            TO   MSG-CD
+098300              GO       TO            BODY-CHK-EXT
+098400      END-IF.
+098500*
+098600* ダブリ入力チェック
+098700      PERFORM       VARYING     IX1    FROM    1    BY  +1
+098800                    UNTIL       IX1     >      4
+098900         PERFORM    VARYING     IX2    FROM    5    BY  -1
+099000                    UNTIL       IX2    =      IX1
+099100         IF      SPA-443-SEIN (IX2) NOT = SPACE
+099200            IF    ( SPA-443-DENO (IX1) = SPA-443-DENO (IX2) )
+099300              AND ( SPA-443-SEIN (IX1) = SPA-443-SEIN (IX2) )
+099400              MOVE    'ﾀﾞﾌﾞﾘ ｴﾗｰ'    TO    O0443-EMSG   (IX2)
+099500              MOVE    'E'            TO    I0443-DENO-C (IX2)
+099600                                           I0443-SEIN-C (IX2)
+099700              MOVE    'ERR'          TO    FLG-ERR
+099800            END-IF
+099900         END-IF
+100000         END-PERFORM
+100100      END-PERFORM.
+100200*
+100300      IF     FLG-ERR          NOT =   SPACE
+100400             IF        MSG-CD       =   ZERO
+100500                       MOVE    01        TO   MSG-CD
+100600             END-IF
+100700             GO       TO            BODY-CHK-EXT
+100800      END-IF.
+100900*  選択入力の有無
+101000      MOVE   ZERO                  TO   SPA-444-IX.
+101100      PERFORM       VARYING     IX1    FROM    1    BY   1
+101200                    UNTIL       IX1     >      5
+101300             IF     SPA-443-SEL (IX1)   =   'S'
+101400               AND  SPA-444-IX          =   ZERO
+101500                       MOVE    IX1       TO   SPA-444-IX
+101600             END-IF
+101700      END-PERFORM.
+101800      IF     SPA-444-IX       NOT =   ZERO
+101900             MOVE     'APL'         TO   FLG-END
+102000             GO       TO            BODY-CHK-EXT
+102100      END-IF.
+102200*
+102300**********************************
+102400*        チェック終了            *
+102500**********************************
+102600*
+102700 BODY-CHK-900.
+102800*  チェック終了（ＯＫ）
+102900     IF      FLG-ERR   =   SPACE
+103000                       MOVE    25        TO   MSG-CD
+103100             PERFORM   VARYING    IX1    FROM    1    BY   1
+103200                       UNTIL      IX1    >       5
+103300                 IF    SPA-443-SEIN(IX1)  =  SPACE
+103400                       MOVE   SPACE     TO   I0443-BTBL (IX1)
+103500                 END-IF
+103600             END-PERFORM
+103700             MOVE      2                 TO   SPA-TRNKBN
+103800             PERFORM   ATTR-SET-RTN
+103900     ELSE
+104000             IF        MSG-CD       =    ZERO
+104100                       MOVE    01        TO   MSG-CD
+104200             END-IF
+104300     END-IF.
+104400*
+104500 BODY-CHK-EXT.
+104600     EXIT.
+104700*================================================================*
+104800*    ＳＰＡへ入力内容の退避                                      *
+104900*================================================================*
+105000 SPA-INPUT-RTN                  SECTION.
+105100 SPA-INPUT-000.
+105200     INITIALIZE                      SPA-443-UPDATE (IX1).
+105300* 第四画面用（伝票・製品名が変更入力された時のみ）
+105400     IF      I0443-DENO (IX1)   NOT  =  SPA-443-DENO (IX1)
+105500        OR   I0443-SEIN (IX1)   NOT  =  SPA-443-SEIN (IX1)
+105600        OR   I0443-TANK (IX1)   NOT  =  SPA-443-TANK (IX1)
+105700             PERFORM  SPA-SEIN-RTN
+105800     END-IF.
+105900* 入力情報
+106000     MOVE    I0443-KBN  (IX1)      TO   SPA-443-KBN  (IX1).
+106100     MOVE    I0443-DENO (IX1)      TO   SPA-443-DENO (IX1).
+106200     MOVE    I0443-SEIN (IX1)      TO   SPA-443-SEIN (IX1).
+106300     MOVE    I0443-TANC (IX1)      TO   SPA-443-TANC (IX1).
+106400     MOVE    I0443-CASE (IX1)      TO   SPA-443-CASE (IX1).
+106500     MOVE    I0443-ILNO (IX1)      TO   SPA-443-ILNO (IX1).
+106600     MOVE    I0443-PONO (IX1)      TO   SPA-443-PONO (IX1).
+106700     MOVE    I0443-PEDA (IX1)      TO   SPA-443-PEDA (IX1).
+106800     MOVE    I0443-SURY (IX1)      TO   SPA-443-SURY (IX1).
+106900     MOVE    I0443-PN   (IX1)      TO   SPA-443-PN   (IX1).
+107000     MOVE    I0443-TANK (IX1)      TO   SPA-443-TANK (IX1).
+107100     MOVE    I0443-SEL  (IX1)      TO   SPA-443-SEL  (IX1).
+107200     PERFORM        VARYING     IX2    FROM    1    BY   1
+107300                    UNTIL       IX2     >      3
+107400             MOVE   I0443-SNO (IX1 IX2) TO   SPA-443-SNO (IX1 IX2)
+107500             MOVE   I0443-ENO (IX1 IX2) TO   SPA-443-ENO (IX1 IX2)
+107600             MOVE   I0443-CSU (IX1 IX2) TO   SPA-443-CSU (IX1 IX2)
+107700     END-PERFORM.
+107800 SPA-INPUT-EXT.
+107900     EXIT.
+108000*================================================================*
+108100*    品名・単価　初期値セット                                    *
+108200*================================================================*
+108300 SPA-SEIN-RTN                   SECTION.
+108400 SPA-SEIN-000.
+108500* 買取品名・単価
+108600     MOVE    I0443-SEIN (IX1)      TO   SPA-443-SEIN1 (IX1).
+108700     MOVE    I0443-TANK (IX1)      TO   SPA-443-TANK1 (IX1).
+108800* 通関品名・単価
+108900     MOVE    I0443-SEIN (IX1)      TO   SPA-443-SEIN2 (IX1).
+109000     MOVE    I0443-TANK (IX1)      TO   SPA-443-TANK2 (IX1).
+109100     IF      FLG-DENSYU              =  '1'
+109200        AND  HDP-ELN             NOT =   SPACE
+109300             MOVE    HDP-MHM       TO   SPA-443-SEIN2 (IX1)
+109400             MOVE    HDP-ELT       TO   SPA-443-TANK2 (IX1)
+109500     ELSE
+109600             MOVE    I0443-SEIN (IX1)   TO   TKN-KEY
+109700             READ    TKN-F
+109800               INVALID
+109900                     CONTINUE
+110000               NOT INVALID
+110100                     MOVE  TKN-TNM      TO   SPA-443-SEIN2 (IX1)
+110200             END-READ
+110300     END-IF.
+110400* 直送品名・単価
+110500     IF      SPA-442-TKBN       NOT  =  SPACE
+110600             MOVE  I0443-SEIN (IX1)  TO   SPA-443-SEIN3 (IX1)
+110700       IF    FLG-DENSYU              =  '1'
+110800         AND HDP-PTTN           NOT  =  ZERO
+110900             MOVE  HDP-PTTN          TO   SPA-443-TANK3 (IX1)
+111000       ELSE
+111100             MOVE  I0443-TANK (IX1)  TO   SPA-443-TANK3 (IX1)
+111200       END-IF
+111300     ELSE
+111400             MOVE  SPACE             TO   SPA-443-SEIN3 (IX1)
+111500             MOVE  ZERO              TO   SPA-443-TANK3 (IX1)
+111600     END-IF.
+111700*
+111800 SPA-SEIN-EXT.
+111900     EXIT.
+112000*================================================================*
+112100*    入力有無のチェック＆伝票判定                                *
+112200*================================================================*
+112300 BODY-CHK0-RTN                  SECTION.
+112400 BODY-CHK0-000.
+112500     MOVE    SPACE               TO   FLG-GYO.
+112600     MOVE    SPACE               TO   FLG-DENSYU.
+112700*
+112800     MOVE    SPACE               TO   O0443-EMSG-B (IX1).
+112900     MOVE    'A'                 TO   O0443-EMSG-C (IX1).
+113000* 未入力行か？
+113100     IF      I0443-KBN (IX1)     =  SPACE
+113200        AND  I0443-DENO(IX1)     =  SPACE
+113300        AND  I0443-SEIN(IX1)     =  SPACE
+113400        AND  I0443-TANC(IX1)     =  SPACE
+113500        AND  I0443-SNO (IX1 1)   =  0
+113600        AND  I0443-ENO (IX1 1)   =  0
+113700        AND  I0443-CSU (IX1 1)   =  0
+113800        AND  I0443-SNO (IX1 2)   =  0
+113900        AND  I0443-ENO (IX1 2)   =  0
+114000        AND  I0443-CSU (IX1 2)   =  0
+114100        AND  I0443-SNO (IX1 3)   =  0
+114200        AND  I0443-ENO (IX1 3)   =  0
+114300        AND  I0443-CSU (IX1 3)   =  0
+114400        AND  I0443-CASE(IX1)     =  SPACE
+114500        AND  I0443-SEL (IX1)     =  SPACE
+114600        AND  I0443-PONO(IX1)     =  SPACE
+114700        AND  I0443-PEDA(IX1)     =  SPACE
+114800        AND  I0443-SURY(IX1)     =  0
+114900        AND  I0443-ILNO(IX1)     =  SPACE
+115000        AND  I0443-TANK(IX1)     =  0
+115100        AND  I0443-PN  (IX1)     =  SPACE
+115200             MOVE   SPACE           TO   O0443-TANN-B(IX1)
+115300             MOVE   'A'             TO   O0443-TANN-C(IX1)
+115400             INITIALIZE                  SPA-443-TBL  (IX1)
+115500                                         SPA-443-O-TBL(IX1)
+115600             GO                     TO   BODY-CHK0-EXT
+115700     END-IF.
+115800* 入力情報の退避
+115900     MOVE    SPA-443-CN(IX1)     TO  WRK-IN-CN.
+116000     MOVE    SPA-443-HN(IX1)     TO  WRK-IN-HN.
+116100     MOVE    I0443-DENO(IX1)     TO  WRK-IN-DENO.
+116200     MOVE    I0443-SEIN(IX1)     TO  WRK-IN-SEIN.
+116300     MOVE    I0443-TANC(IX1)     TO  WRK-IN-TANC.
+116400     MOVE    I0443-SNO (IX1 1)   TO  WRK-IN-SNO (1).
+116500     MOVE    I0443-ENO (IX1 1)   TO  WRK-IN-ENO (1).
+116600     MOVE    I0443-CSU (IX1 1)   TO  WRK-IN-CSU (1).
+116700     MOVE    I0443-SNO (IX1 2)   TO  WRK-IN-SNO (2).
+116800     MOVE    I0443-ENO (IX1 2)   TO  WRK-IN-ENO (2).
+116900     MOVE    I0443-CSU (IX1 2)   TO  WRK-IN-CSU (2).
+117000     MOVE    I0443-SNO (IX1 3)   TO  WRK-IN-SNO (3).
+117100     MOVE    I0443-ENO (IX1 3)   TO  WRK-IN-ENO (3).
+117200     MOVE    I0443-CSU (IX1 3)   TO  WRK-IN-CSU (3).
+117300     MOVE    I0443-CASE(IX1)     TO  WRK-IN-CASE.
+117400     MOVE    I0443-PONO(IX1)     TO  WRK-IN-PONO.
+117500     MOVE    I0443-PEDA(IX1)     TO  WRK-IN-PEDA.
+117600     MOVE    I0443-SURY(IX1)     TO  WRK-IN-SURY.
+117700     MOVE    I0443-ILNO(IX1)     TO  WRK-IN-ILNO.
+117800     MOVE    I0443-TANK(IX1)     TO  WRK-IN-TANK.
+117900     MOVE    I0443-PN  (IX1)     TO  WRK-IN-PN.
+118000* 区分　チェック
+118100     IF    ( I0443-KBN-C  (IX1)(4:1)  =   'E' )
+118200        OR ( I0443-KBN    (IX1)   NOT =   'M' AND 'A' AND 'D'
+118300                                              AND ' ' )
+118400             MOVE     '7'            TO   I0443-KBN-C  (IX1)
+118500             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+118600             GO                  TO   BODY-CHK0-EXT
+118700     END-IF.
+118800* ＫＥＹが変更されていたら？（修正・削除）
+118900     IF     (I0443-KBN    (IX1)       =  'M'   OR   'D'       )
+119000        AND (I0443-DENO(IX1)      NOT =  SPA-443-O-DENO (IX1)
+119100          OR I0443-SEIN(IX1)      NOT =  SPA-443-O-SEIN (IX1) )
+119200             MOVE   'ｷ-ｺｳﾓｸｶﾞ ﾍﾝｺｳ ｻﾚﾃｲﾏｽ'
+119300                                 TO   O0443-EMSG   (IX1)
+119400             MOVE   '7'          TO   I0443-DENO-C (IX1)
+119500                                      I0443-SEIN-C (IX1)
+119600             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+119700             GO                  TO   BODY-CHK0-EXT
+119800     END-IF.
+119900* 変更入力行か？
+120000     IF      I0443-KBN      (IX1)  NOT =   'A'  AND  'M'
+120100        IF   SPA-443-O-DENO (IX1)  NOT =   WRK-IN-DENO
+120200             MOVE   '7'          TO   I0443-DENO-C (IX1)
+120300             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+120400        END-IF
+120500        IF   SPA-443-O-SEIN (IX1)  NOT =   WRK-IN-SEIN
+120600             MOVE   '7'          TO   I0443-SEIN-C (IX1)
+120700             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+120800        END-IF
+120900        IF   SPA-443-O-TANC (IX1)  NOT =   WRK-IN-TANC
+121000             MOVE   '7'          TO   I0443-TANC-C (IX1)
+121100             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+121200        END-IF
+121300        IF   SPA-443-O-CASE (IX1)  NOT =   WRK-IN-CASE
+121400             MOVE   '7'          TO   I0443-CASE-C (IX1)
+121500             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+121600        END-IF
+121700        IF   SPA-443-O-ILNO (IX1)  NOT =   WRK-IN-ILNO
+121800             MOVE   '7'          TO   I0443-ILNO-C (IX1)
+121900             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+122000        END-IF
+122100        IF   SPA-443-O-PONO (IX1)  NOT =   WRK-IN-PONO
+122200             MOVE   '7'          TO   I0443-PONO-C (IX1)
+122300             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+122400        END-IF
+122500        IF   SPA-443-O-PEDA (IX1)  NOT =   WRK-IN-PEDA
+122600             MOVE   '7'          TO   I0443-PEDA-C (IX1)
+122700             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+122800        END-IF
+122900        IF   SPA-443-O-SURY (IX1)  NOT =   WRK-IN-SURY
+123000             MOVE   '7'          TO   I0443-SURY-C (IX1)
+123100             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+123200        END-IF
+123300        IF   SPA-443-O-PN   (IX1)  NOT =   WRK-IN-PN
+123400             MOVE   '7'          TO   I0443-PN-C   (IX1)
+123500             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+123600        END-IF
+123700        IF   SPA-443-O-TANK (IX1)  NOT =   WRK-IN-TANK
+123800             MOVE   '7'          TO   I0443-TANK-C (IX1)
+123900             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+124000        END-IF
+124100        IF   SPA-443-O-CN   (IX1)  NOT =   WRK-IN-CN
+124200             MOVE   '7'          TO   I0443-CSU-C  (IX1 1)
+124300             MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+124400        END-IF
+124500*-----  IF   SPA-443-O-HN   (IX1)  NOT =   WRK-IN-HN
+124600*-----       MOVE   '7'          TO   I0443-       (IX1)
+124700*-----       MOVE   'ERR'        TO   FLG-ERR    FLG-GYO
+124800*-----  END-IF
+124900        IF   FLG-GYO               NOT =   SPACE
+125000             MOVE   'ﾍﾝｺｳ ﾆｭｳﾘｮｸ ｻﾚﾃｲﾏｽ  '
+125100                                 TO   O0443-EMSG   (IX1)
+125200             MOVE   '7'          TO   I0443-KBN-C  (IX1)
+125300             GO                  TO   BODY-CHK0-EXT
+125400        END-IF
+125500     END-IF.
+125600*
+125700     IF      I0443-KBN    (IX1)       =   'D'  OR  ' '
+125800             INITIALIZE                     SPA-443-TBL  (IX1)
+125900             MOVE   SPA-443-O-TBL(IX1) TO   SPA-443-INPUT(IX1)
+126000             MOVE   I0443-KBN    (IX1) TO   SPA-443-KBN  (IX1)
+126100             MOVE   I0443-SEL    (IX1) TO   SPA-443-SEL  (IX1)
+126200             GO                  TO   BODY-CHK0-EXT
+126300     END-IF.
+126400* 伝票の判断
+126500     IF      I0443-DENO (IX1)    IS   NUMERIC
+126600             MOVE   '1'          TO   FLG-DENSYU
+126700     ELSE
+126800             MOVE   '2'          TO   FLG-DENSYU
+126900     END-IF.
+127000     IF      SPA-442-SKBN         =   '3'
+127100             MOVE   '3'          TO   FLG-DENSYU
+127200     END-IF.
+127300*
+127400 BODY-CHK0-EXT.
+127500     EXIT.
+127600*================================================================*
+127700*    明細行の入力内容チェック（９０番有り）                      *
+127800*================================================================*
+127900 BODY-CHKA-RTN                  SECTION.
+128000 BODY-CHKA-000.
+128100*
+128200* 区分　チェック      ------------------------------------------*
+128300*
+128400* 伝票　チェック      ------------------------------------------*
+128500     IF     (I0443-DENO-C (IX1)(4:1)  =   'E'    )
+128600         OR (I0443-DENO   (IX1)     NOT   NUMERIC)
+128700             MOVE     '7'            TO   I0443-DENO-C (IX1)
+128800             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+128900     END-IF.
+129000*
+129100* 製品名　チェック    ------------------------------------------*
+129200     IF     (I0443-SEIN-C (IX1)(4:1)  =   'E'    )
+129300             MOVE     '7'            TO   I0443-SEIN-C (IX1)
+129400             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+129500     END-IF.
+129600*
+129700     IF      FLG-GYO             NOT  =   SPACE
+129800             GO                      TO   BODY-CHKA-EXT
+129900     END-IF.
+130000*
+130100* 発送伝票　存在チェック  --------------------------------------*
+130200     IF     (I0443-SEIN   (IX1)       =   SPACE  )
+130300             GO                      TO   BODY-CHKA-200
+130400     END-IF.
+130500*
+130600     MOVE    SPACE                   TO   HDP-KEY.
+130700     MOVE    SPA-442-ACCO            TO   HDP-TKC.
+130800     MOVE    I0443-DENO (IX1)        TO   HDP-DNO.
+130900     MOVE    SPACE                   TO   HDP-KBN.
+131000     MOVE    I0443-SEIN (IX1)        TO   HDP-HNM.
+131100     READ    HDP-F
+131200       INVALID
+131300             MOVE  'ﾊｯｿｳﾃﾞﾝﾋﾟｮｳ ﾅｼ'  TO   O0443-EMSG (IX1)
+131400             GO                      TO   BODY-CHKA-280
+131500     END-READ.
+131600             GO                      TO   BODY-CHKA-230.
+131700*
+131800 BODY-CHKA-200.
+131900     MOVE    SPACE                   TO   HDP-KEY.
+132000     MOVE    SPA-442-ACCO            TO   HDP-TKC.
+132100     MOVE    I0443-DENO (IX1)        TO   HDP-DNO.
+132200     MOVE    SPACE                   TO   HDP-KBN.
+132300     MOVE    SPACE                   TO   HDP-HNM.
+132400     START   HDP-F     KEY           >    HDP-KEY
+132500       INVALID
+132600             MOVE  'ﾊｯｿｳﾃﾞﾝﾋﾟｮｳ ﾅｼ'  TO   O0443-EMSG (IX1)
+132700             GO                      TO   BODY-CHKA-280
+132800     END-START.
+132900     READ    HDP-F     NEXT
+133000       AT END
+133100             MOVE  'ﾊｯｿｳﾃﾞﾝﾋﾟｮｳ ﾅｼ'  TO   O0443-EMSG (IX1)
+133200             GO                      TO   BODY-CHKA-280
+133300     END-READ.
+133400     IF      HDP-TKC         NOT =   SPA-442-ACCO
+133500         OR  HDP-DNO         NOT =   I0443-DENO  (IX1)
+133600         OR  HDP-KBN         NOT =   SPACE
+133700             MOVE  'ﾊｯｿｳﾃﾞﾝﾋﾟｮｳ ﾅｼ'  TO   O0443-EMSG (IX1)
+133800             GO                      TO   BODY-CHKA-280
+133900     ELSE
+134000             MOVE    HDP-HNM         TO   I0443-SEIN   (IX1)
+134100             MOVE    'A'             TO   I0443-SEIN-C (IX1)
+134200     END-IF.
+134300 BODY-CHKA-230.
+134400* 取り扱い可能か？
+134500     IF      HDP-DKN             =   '1'
+134600             MOVE  'ﾐｹﾝｼｭｳｽﾞﾐ'       TO   O0443-EMSG   (IX1)
+134700             GO                      TO   BODY-CHKA-280
+134800     END-IF.
+134900     IF      HDP-DKN             =   '2'
+135000             MOVE  'ｳﾘｱｹﾞ ｽﾞﾐ'       TO   O0443-EMSG   (IX1)
+135100             GO                      TO   BODY-CHKA-280
+135200     END-IF.
+135300             GO                      TO   BODY-CHKA-300.
+135400 BODY-CHKA-280.
+135500* 発送伝票無し
+135600     MOVE    0                       TO   I0443-SURY  (IX1).
+135700     MOVE    SPACE                   TO   I0443-PONO  (IX1).
+135800     MOVE    SPACE                   TO   I0443-PEDA  (IX1).
+135900     MOVE    0                       TO   I0443-TANK  (IX1).
+136000     MOVE    'E'                     TO   I0443-DENO-C (IX1)
+136100                                          I0443-SEIN-C (IX1).
+136200     MOVE    'ERR'                   TO   FLG-ERR    FLG-GYO.
+136300     GO                              TO   BODY-CHKA-EXT.
+136400*
+136500 BODY-CHKA-300.
+136600* 単位　　＝＞　入力不可  ------------------------------------*
+136700     IF      I0443-TANC (IX1)   NOT =   SPACE
+136800         AND I0443-TANC (IX1)   NOT =   SPA-443-TANC (IX1)
+136900             MOVE  'ﾆｭｳﾘｮｸ ﾌｶ ｺｳﾓｸ ﾃﾞｽ'   TO   O0443-EMSG (IX1)
+137000             MOVE     '7'            TO   I0443-TANC-C (IX1)
+137100             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+137200     END-IF.
+137300* 数量　　＝＞　入力不可  ------------------------------------*
+137400     IF      I0443-SURY (IX1)   NOT =   ZERO
+137500         AND I0443-SURY (IX1)   NOT =   SPA-443-SURY (IX1)
+137600             MOVE  'ﾆｭｳﾘｮｸ ﾌｶ ｺｳﾓｸ ﾃﾞｽ'   TO   O0443-EMSG (IX1)
+137700             MOVE     '7'            TO   I0443-SURY-C (IX1)
+137800             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+137900     END-IF.
+138000* Ｐ／Ｏ　＝＞　入力不可  ------------------------------------*
+138100     IF      I0443-PONO (IX1)   NOT =   SPACE
+138200         AND I0443-PONO (IX1)   NOT =   SPA-443-PONO (IX1)
+138300             MOVE  'ﾆｭｳﾘｮｸ ﾌｶ ｺｳﾓｸ ﾃﾞｽ'   TO   O0443-EMSG (IX1)
+138400             MOVE     '7'            TO   I0443-PONO-C (IX1)
+138500             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+138600     END-IF.
+138700* ＰＥＤＡ＝＞　入力不可  ------------------------------------*
+138800     IF      I0443-PEDA (IX1)   NOT =   SPACE
+138900         AND I0443-PEDA (IX1)   NOT =   SPA-443-PEDA (IX1)
+139000             MOVE  'ﾆｭｳﾘｮｸ ﾌｶ ｺｳﾓｸ ﾃﾞｽ'   TO   O0443-EMSG (IX1)
+139100             MOVE     '7'            TO   I0443-PEDA-C (IX1)
+139200             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+139300     END-IF.
+139400* 単価　　＝＞　入力不可  ------------------------------------*
+139500     IF      I0443-TANK (IX1)   NOT =   0
+139600         AND I0443-TANK (IX1)   NOT =   SPA-443-TANK (IX1)
+139700             MOVE  'ﾆｭｳﾘｮｸ ﾌｶ ｺｳﾓｸ ﾃﾞｽ'   TO   O0443-EMSG (IX1)
+139800             MOVE     '7'            TO   I0443-TANK-C (IX1)
+139900             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+140000     END-IF.
+140100*
+140200     IF      FLG-GYO         NOT =   SPACE
+140300             GO                      TO   BODY-CHKA-EXT
+140400     END-IF.
+140500* 発送伝票ファイルより画面編集（登録のみ）
+140600     IF      I0443-KBN (IX1)     =   'A'
+140700             MOVE    'A'             TO   I0443-SURY-C(IX1)
+140800                                          I0443-PONO-C(IX1)
+140900                                          I0443-PEDA-C(IX1)
+141000                                          I0443-TANK-C(IX1)
+141100             MOVE    HDP-SUR         TO   I0443-SURY  (IX1)
+141200             MOVE    HDP-ODN         TO   I0443-PONO  (IX1)
+141300             MOVE    HDP-BKA         TO   I0443-PEDA  (IX1)
+141400*                                 -------  国内＄建取引追加       980326
+141500             MOVE    HDP-TKC         TO   CHG-TKC                 980326
+141600             PERFORM    JCHGRAT-RTN                               980326
+141700*************IF     (HDP-TK   =   '$'  OR  'M')
+141800             IF     (HDP-TK   =   '$'  OR  'M'  OR  'E')          001110
+141900                OR                                                980326
+142000*************       (CHG-RAT  =   '$'  OR  'M')                   980326
+142100                    (CHG-RAT  =   '$'  OR  'M'  OR  'E')          001110
+142200                 COMPUTE  I0443-TANK (IX1)  =  HDP-TNK  /  100
+142300             ELSE
+142400                 MOVE     HDP-TNK        TO   I0443-TANK  (IX1)
+142500             END-IF
+142600*
+142700             MOVE    '1'             TO   I0443-TANC  (IX1)
+142800             MOVE    'PCS.'          TO   O0443-TANN  (IX1)
+142900             MOVE    'A'             TO   I0443-TANC-C(IX1)
+143000                                          O0443-TANN-C(IX1)
+143100             MOVE    IX1             TO   WRK-IDEX                980803TH
+143200             IF      SPA-KPJ(IX1:1)    NOT =    WRK-IDEXX         980803TH
+143300                     PERFORM   KONPOU-READ-RTN     *>梱包実績情報 980803
+143400                     IF  FLG-KPJ       =       'OK'               980803
+143500                         MOVE  WRK-IDEXX  TO    SPA-KPJ(IX1:1)    980803TH
+143600                     END-IF                                       980803TH
+143700             END-IF                                               980803TH
+143800     END-IF.
+143900*
+144000* ＳＰＡセット
+144100     PERFORM   SPA-INPUT-RTN.
+144200     MOVE    HDP-NTB                 TO   SPA-443-NTB (IX1).
+144300     MOVE    HDP-SCD                 TO   SPA-443-SCO (IX1).
+144400     MOVE    HDP-GAI                 TO   SPA-443-GAI (IX1).
+144500     MOVE    HDP-TK                  TO   SPA-443-TKB (IX1).
+144600     MOVE    HDP-BNO                 TO   SPA-443-BNO (IX1).
+144700     MOVE    HDP-TG                  TO   SPA-443-TG  (IX1).
+144800     MOVE HDP-TKC TO CKA-PFLD1.                                   980623MN
+144900     CALL 'JCHGCKA' USING CKA-PLIST.                              980623MN
+145000*    IF      (( HDP-RKB       =      SPACE )     AND
+145100*             ( HDP-TKC       =    '3928200' OR '3928201' OR
+145200*                                  '3923900' OR '3924000' OR
+145300*                                  '3923906' OR '3923908' OR
+145400*                                  '3923910' OR
+145500*                                  '3929010' OR '3929012'
+145600*                 OR '3923920' OR  '3923921' OR '3923922'
+145700*                 OR '3923923' OR  '3923924'
+145800*                 OR '3923930' OR  '3923931' OR '3923932'
+145900*                 OR '3923933' OR  '3923934'
+146000*                 OR '3923940' OR  '3923941' OR '3923942'
+146100*                 OR '3923943' OR  '3923944'
+146200*                 OR '3928230' OR  '3928231' OR '3928232'
+146300*                 OR '3928233' OR  '3928234'
+146400*                 OR '3929020' OR  '3929021' OR '3929022'
+146500*                 OR '3929023' OR  '3929024' ))
+146600     IF      (( HDP-RKB       =      SPACE )     AND
+146700              ( HDP-TKC       =    '3928200' OR '3928201' OR
+146800                                   '3923900' OR '3924000' OR
+146900                                   '3928236' OR '3928225' OR      991001
+147000                                   '3923906' OR '3923908' OR
+147100                                   '3923910' OR '3923914' OR      000209
+147200                                   '3929010' OR '3929012' OR
+147300                                   '3928226' OR '3928203' OR      010711
+147400                                   '3929110' OR '3929112' OR      010711
+147500                                   '3929200' OR '3928204' OR      011219
+147600                      '3921141' OR '3929210' OR '3928205' OR      020723
+147700                      '3923985' OR '3923980' OR '3923970' OR      011121
+147800                      '3923951' OR '3910900' OR '3923971' OR      020826
+147900                      '3929115' OR '3923972' OR '3923974' OR      020902
+148000                      '3929140' OR '3929141' OR '3929142' OR      021018
+148100                      '3929150' OR '3929151' OR '3929152' OR      021018
+148200                      '3929211' OR '3929114' OR '3929160' OR      021018
+148300                      '3929161' OR '3929162' OR '3910902' OR      021018
+148400                      '3923955' OR '3929040' OR '3928720' OR      011025
+148500                      '3928260' OR '3928261' OR '3928262' OR      020913
+148600                      '3928263' OR '3928224' OR '3928227' OR      020913
+148700         '3924060' OR '3910800' OR '3910801' OR '3910802' )       020606
+148800                  OR (CKA-PFLD2 = '0'))
+148900             MOVE    HDP-DTL (1:5)   TO   SPA-443-DTL (IX1)
+149000     END-IF.
+149100*
+149200* ＩＮＶ発行（ボディ）存在チェック  ----------------------------*
+149300     PERFORM   IPB-CHK-RTN.
+149400     IF      FLG-GYO         NOT =   SPACE
+149500             GO                      TO   BODY-CHKA-EXT
+149600     END-IF.
+149700*
+149800* 該非　チェック    --------------------------------------------*
+149900     PERFORM   SEIN-CHK-RTN.
+150000*
+150100* CASE  チェック   -------------------------------------------*
+150200     IF    ( I0443-CASE-C (IX1)(4:1)  =   'E' )
+150300             MOVE     '7'            TO   I0443-CASE-C (IX1)
+150400             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+150500     ELSE
+150600* ケースマーク管理　存在チェック
+150700             MOVE    SPACE                TO   CMK-KEY
+150800             MOVE    SPA-442-ACCO         TO   CMK-TKC
+150900             MOVE    I0443-CASE (IX1)     TO   CMK-EDA
+151000             READ    CMK-F
+151100               INVALID
+151200                   MOVE   '7'        TO   I0443-CASE-C (IX1)
+151300                   MOVE   'ERR'      TO   FLG-ERR    FLG-GYO
+151400             END-READ
+151500     END-IF.
+151600* 備考    チェック   -----------------------------------------*
+151700     IF    ( I0443-ILNO-C (IX1)(4:1)  =   'E' )
+151800             MOVE     '7'            TO   I0443-ILNO-C (IX1)
+151900             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+152000     END-IF.
+152100* 選択区分　チェック    --------------------------------------*
+152200     IF    ( I0443-SEL-C  (IX1)(4:1)  =   'E'  )
+152300        OR ( I0443-SEL    (IX1)  NOT  =   SPACE  AND  'S' )
+152400             MOVE     '7'            TO   I0443-SEL-C  (IX1)
+152500             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+152600     END-IF.
+152700* Ｐ／Ｎ　チェック      --------------------------------------*
+152800     IF      I0443-PN-C   (IX1)(4:1)  =   'E'
+152900             MOVE     '7'            TO   I0443-PN-C   (IX1)
+153000             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+153100     END-IF.
+153200* カートン・数量  チェック     -------------------------------*
+153300     PERFORM   SURYO-CHK-RTN.
+153400*
+153500 BODY-CHKA-EXT.
+153600     EXIT.
+153700*================================================================*
+153800*    梱包実績情報検索                        ADD-START  98/08/03 *
+153900*================================================================*
+154000 KONPOU-READ-RTN                 SECTION.
+154100 KONPOU-READ-000.
+154200*
+154300     MOVE     SPACE          TO     SW-KPJ  FLG-KPJ.
+154400*    OPEN     INPUT          KPJ-F.                               980803TH
+154500*================================================================*
+154600*    梱包情報ファイルのスタート　　　　　　　　　　　　　　　　　　
+154700*================================================================*
+154800     MOVE  SPA-442-ACCO              TO  KNP-TKC.
+154900     MOVE  I0443-DENO (IX1)          TO  KNP-DNO.
+155000     MOVE  I0443-SEIN (IX1)          TO  KNP-SNM.
+155100     MOVE  LOW-VALUE                 TO  KNP-CUR
+155200                                         KNP-SNO
+155300                                         KNP-SYT.
+155400*    DISPLAY 'M5504430 KNP-KEY1 ' I0443-DENO (IX1) UPON CONSOLE.
+155500     START  KNP-F KEY >=  KNP-KEY
+155600         INVALID KEY
+155700             MOVE   'END'        TO   SW-KPJ
+155800         NOT INVALID KEY
+155900             MOVE    SPACE       TO   SW-KPJ
+156000     END-START.
+156100*
+156200     PERFORM  UNTIL  ( SW-KPJ       =     'END' )
+156300        READ  KNP-F NEXT
+156400          AT  END
+156500              IF  FLG-KPJ       NOT =     'OK'
+156600                  MOVE  'NG'        TO     FLG-KPJ
+156700              END-IF
+156800              MOVE  'END'           TO     SW-KPJ
+156900          NOT AT  END
+157000              IF  KNP-TKC     =     SPA-442-ACCO
+157100                  IF  KNP-DNO       =     I0443-DENO (IX1)  AND
+157200                      KNP-SNM       =     I0443-SEIN (IX1)
+157300                      PERFORM  KONPOU-CHK-RTN
+157400                      MOVE  'OK'    TO    FLG-KPJ
+157500                  END-IF
+157600                  IF  KNP-DNO       >     I0443-DENO (IX1)
+157700                      IF  FLG-KPJ   NOT =    'OK'
+157800                          MOVE  'NG'    TO    FLG-KPJ
+157900                      END-IF
+158000                      MOVE  'END'   TO    SW-KPJ
+158100                  END-IF
+158200              END-IF
+158300              IF  KNP-TKC     >     SPA-442-ACCO
+158400                  IF  FLG-KPJ   NOT =    'OK'
+158500                      MOVE  'NG'    TO    FLG-KPJ
+158600                  END-IF
+158700                  MOVE  'END'   TO    SW-KPJ
+158800              END-IF
+158900        END-READ
+159000     END-PERFORM.
+159100*
+159200*    CLOSE      KPJ-F.                                            980803TH
+159300*
+159400***  IF  FLG-KPJ        =      'NG'
+159500***      MOVE  'ERR'    TO      FLG-ERR
+159600***      MOVE   67      TO      MSG-CD
+159700***  END-IF.
+159800*
+159900 KONPOU-READ-EXT.
+160000     EXIT.
+160100*---- 98/08/03 ADD-END ----*
+160200*================================================================*
+160300*    梱包実績情報のカートンＮｏ情報取得      ADD-START  98/08/03 *
+160400*================================================================*
+160500 KONPOU-CHK-RTN                  SECTION.
+160600 KONPOU-CHK-000.
+160700*
+160800*    DISPLAY 'M5504430 KNP-KEY2 ' I0443-DENO (IX1) UPON CONSOLE.
+160900     IF  FLG-KPJ                 =       SPACE
+161000         MOVE   ZERO             TO      WRK-SUU
+161100         MOVE   1                TO      IX5
+161200***      MOVE   KPJ-SNM          TO      SPA-443-SEIN (IX1)
+161300***                                      I0443-SEIN   (IX1)
+161400***      MOVE   KPJ-TKT          TO      SPA-443-PONO (IX1)
+161500***                                      I0443-PONO   (IX1)
+161600         MOVE   KNP-CUR(1:4)     TO      SPA-443-SNO  (IX1 IX5)
+161700                                         I0443-SNO    (IX1 IX5)
+161800                                         WRK-CUR
+161900         MOVE   KNP-SUR          TO      SPA-443-CSU  (IX1 IX5)
+162000                                         I0443-CSU    (IX1 IX5)
+162100         MOVE   '001'            TO      SPA-443-CASE (IX1)
+162200                                         I0443-CASE   (IX1)
+162300         MOVE   'A'              TO      I0443-SNO-C  (IX1 IX5)
+162400                                         I0443-CSU-C  (IX1 IX5)
+162500                                         I0443-CASE-C (IX1)
+162600     ELSE
+162700         ADD    1                TO      WRK-CUR
+162800     END-IF.
+162900*
+163000     IF  KNP-SUR             NOT =       SPA-443-CSU (IX1 IX5)  OR
+163100         KNP-CUR(1:4)        NOT =       WRK-CURX
+163200     THEN
+163300         ADD    1                TO      IX5
+163400*@@@     IF  IX5                 >       39
+163500         IF  IX5                 >       78                       040213
+163600             MOVE   'ERR'            TO      FLG-ERR
+163700             MOVE    66              TO      MSG-CD
+163800             GO  TO              KONPOU-CHK-EXT
+163900         END-IF
+164000         MOVE   KNP-CUR(1:4)     TO      SPA-443-SNO  (IX1 IX5)
+164100                                         SPA-443-ENO  (IX1 IX5)
+164200                                         WRK-CUR
+164300         MOVE   KNP-SUR          TO      SPA-443-CSU  (IX1 IX5)
+164400         IF  IX5                 <       4
+164500             MOVE   KNP-CUR(1:4)     TO      I0443-SNO  (IX1 IX5)
+164600                                             I0443-ENO  (IX1 IX5)
+164700             MOVE   KNP-SUR          TO      I0443-CSU  (IX1 IX5)
+164800             MOVE   'A'              TO      I0443-SNO-C(IX1 IX5)
+164900                                             I0443-ENO-C(IX1 IX5)
+165000                                             I0443-CSU-C(IX1 IX5)
+165100         ELSE
+165200             CONTINUE
+165300         END-IF
+165400     ELSE
+165500         MOVE   KNP-CUR(1:4)     TO      SPA-443-ENO (IX1 IX5)
+165600         IF  IX5                 <       4
+165700             MOVE   KNP-CUR(1:4)     TO      I0443-ENO  (IX1 IX5)
+165800             MOVE   'A'              TO      I0443-ENO-C(IX1 IX5)
+165900         ELSE
+166000             CONTINUE
+166100         END-IF
+166200     END-IF.
+166300*
+166400***  COMPUTE  WRK-SUU    =       WRK-SUU  +  KPJ-SUR.
+166500***  MOVE   WRK-SUU      TO      SPA-443-SURY (IX1)
+166600***                              I0443-SURY   (IX1).
+166700*
+166800 KONPOU-CHK-EXT.
+166900     EXIT.
+167000*---- 98/08/03 ADD-END ----*
+167100*================================================================*
+167200*    ＩＮＶ発行（ボディ）存在チェック                            *
+167300*================================================================*
+167400 IPB-CHK-RTN                    SECTION.
+167500 IPB-CHK-000.
+167600     MOVE    SPA-442-ACCO            TO   IPB-TKC.
+167700     MOVE    SPA-442-INVO            TO   IPB-INO.
+167800     MOVE    SPA-443-DENO (IX1)      TO   IPB-DNO.
+167900     MOVE    SPACE                   TO   IPB-KBN.
+168000     MOVE    SPA-443-SEIN (IX1)      TO   IPB-SNM.
+168100     READ    IPB-F
+168200       INVALID
+168300             IF   I0443-KBN (IX1)   =  'D'  OR  'M'
+168400                  MOVE    'ﾐﾄｳﾛｸ   '   TO   O0443-EMSG   (IX1)
+168500                  MOVE    'ERR'        TO   FLG-ERR    FLG-GYO
+168600                  MOVE    'E'          TO   I0443-DENO-C (IX1)
+168700                                            I0443-SEIN-C (IX1)
+168800             END-IF
+168900       NOT INVALID
+169000             IF   I0443-KBN (IX1)   =  'A'
+169100                  MOVE    'ﾄｳﾛｸ ｽﾞﾐ'   TO   O0443-EMSG   (IX1)
+169200                  MOVE    'ERR'        TO   FLG-ERR    FLG-GYO
+169300                  MOVE    'E'          TO   I0443-DENO-C (IX1)
+169400                                            I0443-SEIN-C (IX1)
+169500             END-IF
+169600     END-READ.
+169700 IPB-CHK-EXT.
+169800     EXIT.
+169900*================================================================*
+170000*    カートンＮＯ・数量チェック                                  *
+170100*================================================================*
+170200 SURYO-CHK-RTN                  SECTION.
+170300 SURYO-CHK-000.
+170400* 異常入力チェック     ------------------------------------------*
+170500     MOVE    SPACE                   TO   FLG-GYO2.
+170600     PERFORM VARYING         IX2     FROM    1   BY  1
+170700             UNTIL           IX2     >       3
+170800             IF     I0443-SNO-C (IX1 IX2)(4:1)  =   'E'
+170900                    MOVE     '7'        TO   I0443-SNO-C (IX1 IX2)
+171000                    MOVE     'ERR'      TO   FLG-ERR    FLG-GYO2
+171100             END-IF
+171200             IF     I0443-ENO-C (IX1 IX2)(4:1)  =   'E'
+171300                    MOVE     '7'        TO   I0443-ENO-C (IX1 IX2)
+171400                    MOVE     'ERR'      TO   FLG-ERR    FLG-GYO2
+171500             END-IF
+171600             IF     I0443-CSU-C (IX1 IX2)(4:1)  =   'E'
+171700                    MOVE     '7'        TO   I0443-CSU-C (IX1 IX2)
+171800                    MOVE     'ERR'      TO   FLG-ERR    FLG-GYO2
+171900             END-IF
+172000     END-PERFORM.
+172100     IF      FLG-GYO2             NOT =   SPACE
+172200             GO                      TO   SURYO-CHK-900
+172300     END-IF.
+172400* 大小　チェック       ------------------------------------------*
+172500     PERFORM VARYING         IX2     FROM    1   BY  1
+172600             UNTIL           IX2     >       3
+172700             IF     SPA-443-SNO (IX1 IX2)      =   ZERO
+172800               AND  SPA-443-ENO (IX1 IX2)  NOT =   ZERO
+172900                    MOVE    '7'         TO   I0443-SNO-C (IX1 IX2)
+173000                                             I0443-ENO-C (IX1 IX2)
+173100                    MOVE    'ERR'       TO   FLG-ERR    FLG-GYO2
+173200             END-IF
+173300             IF     SPA-443-SNO (IX1 IX2)  NOT =   ZERO
+173400               AND  SPA-443-ENO (IX1 IX2)  NOT =   ZERO
+173500               AND  SPA-443-SNO (IX1 IX2)      >
+173600                                           SPA-443-ENO (IX1 IX2)
+173700                    MOVE    '7'         TO   I0443-SNO-C (IX1 IX2)
+173800                                             I0443-ENO-C (IX1 IX2)
+173900                    MOVE    'ERR'       TO   FLG-ERR    FLG-GYO2
+174000             END-IF
+174100             IF   ( SPA-443-SNO (IX1 IX2)      =   ZERO
+174200                AND SPA-443-CSU (IX1 IX2)  NOT =   ZERO  )
+174300               OR ( SPA-443-SNO (IX1 IX2)  NOT =   ZERO
+174400                AND SPA-443-CSU (IX1 IX2)      =   ZERO  )
+174500                    MOVE    '7'         TO   I0443-SNO-C (IX1 IX2)
+174600                                             I0443-CSU-C (IX1 IX2)
+174700                    MOVE    'ERR'       TO   FLG-ERR    FLG-GYO2
+174800             END-IF
+174900     END-PERFORM.
+175000     IF      FLG-GYO2             NOT =   SPACE
+175100             GO                      TO   SURYO-CHK-900
+175200     END-IF.
+175300* カートン入力画面選択？    -------------------------------------*
+175400     IF      SPA-443-SEL (1)      NOT =   'S'
+175500        AND  SPA-443-SEL (2)      NOT =   'S'
+175600        AND  SPA-443-SEL (3)      NOT =   'S'
+175700        AND  SPA-443-SEL (4)      NOT =   'S'
+175800        AND  SPA-443-SEL (5)      NOT =   'S'
+175900             CONTINUE
+176000     ELSE
+176100             GO                      TO   SURYO-CHK-900
+176200     END-IF.
+176300* 並び換え             ------------------------------------------*
+176400     PERFORM   CTN-RESET1-RTN.
+176500     PERFORM   CTN-RESET2-RTN.
+176600* 関連チェック         ------------------------------------------*
+176700     PERFORM VARYING         IX2     FROM    2   BY  1
+176800*@@@         UNTIL           IX2     >      39
+176900             UNTIL           IX2     >      78                    040213
+177000                OR     WRK-SNO(IX2)  =    ZERO
+177100             COMPUTE   IX3   =   IX2     -    1
+177200             IF   ( WRK-ENO (IX3)     =    ZERO
+177300                AND WRK-SNO (IX2)    <=    WRK-SNO (IX3) )
+177400               OR ( WRK-ENO (IX3) NOT =    ZERO
+177500                AND WRK-SNO (IX2)    <=    WRK-ENO (IX3) )
+177600                    IF     WRK-SNO (IX2)  =  SPA-443-SNO (IX1 1)
+177700                           MOVE  '7'    TO   I0443-SNO-C (IX1 1)
+177800                    END-IF
+177900                    IF     WRK-SNO (IX2)  =  SPA-443-SNO (IX1 2)
+178000                           MOVE  '7'    TO   I0443-SNO-C (IX1 2)
+178100                    END-IF
+178200                    IF     WRK-SNO (IX2)  =  SPA-443-SNO (IX1 3)
+178300                           MOVE  '7'    TO   I0443-SNO-C (IX1 3)
+178400                    END-IF
+178500                    MOVE    'ERR'       TO   FLG-ERR    FLG-GYO2
+178600             END-IF
+178700     END-PERFORM.
+178800     IF      FLG-GYO2             NOT =   SPACE
+178900             GO                      TO   SURYO-CHK-900
+179000     END-IF.
+179100*
+179200 SURYO-CHK-700.
+179300* 画面再編集（昇順）ＳＰＡセット  -------------------------------*
+179400     PERFORM VARYING         IX2     FROM    1   BY  1
+179500*@@@         UNTIL           IX2     >      39
+179600             UNTIL           IX2     >      78                    040213
+179700             MOVE      WRK-SNO (IX2)  TO   SPA-443-SNO (IX1 IX2)
+179800             MOVE      WRK-ENO (IX2)  TO   SPA-443-ENO (IX1 IX2)
+179900             MOVE      WRK-CSU (IX2)  TO   SPA-443-CSU (IX1 IX2)
+180000     END-PERFORM.
+180100     MOVE    SPACE                    TO   I0443-SNO-G (IX1)
+180200                                           I0443-ENO-G (IX1)
+180300                                           I0443-CSU-G (IX1).
+180400     PERFORM VARYING         IX2     FROM    1   BY  1
+180500             UNTIL           IX2     >       3
+180600             IF        WRK-SNO (IX2)  NOT =   ZERO
+180700                       MOVE   WRK-SNO(IX2) TO I0443-SNO(IX1 IX2)
+180800             END-IF
+180900             IF        WRK-ENO (IX2)  NOT =   ZERO
+181000                       MOVE   WRK-ENO(IX2) TO I0443-ENO(IX1 IX2)
+181100             END-IF
+181200             IF        WRK-CSU (IX2)  NOT =   ZERO
+181300                       MOVE   WRK-CSU(IX2) TO I0443-CSU(IX1 IX2)
+181400             END-IF
+181500             MOVE      'A'            TO   I0443-SNO-C (IX1 IX2)
+181600                                           I0443-ENO-C (IX1 IX2)
+181700                                           I0443-CSU-C (IX1 IX2)
+181800     END-PERFORM.
+181900* 総数　チェック       ------------------------------------------*
+182000     MOVE    ZERO                     TO   WRK-SURYO.
+182100     PERFORM VARYING         IX2     FROM    1   BY  1
+182200*@@@         UNTIL           IX2     >      39
+182300             UNTIL           IX2     >      78                    040213
+182400             IF     SPA-443-ENO (IX1 IX2)   =   ZERO
+182500                    COMPUTE  WRK-SURYO   =    WRK-SURYO
+182600                                     +  SPA-443-CSU (IX1 IX2)
+182700             ELSE
+182800                    COMPUTE  WRK-SURYO   =    WRK-SURYO
+182900                                     +  SPA-443-CSU (IX1 IX2)
+183000                                     * (SPA-443-ENO (IX1 IX2)
+183100                                     -  SPA-443-SNO (IX1 IX2) + 1)
+183200             END-IF
+183300     END-PERFORM.
+183400     IF      SPA-443-SURY (IX1)  NOT =    WRK-SURYO
+183500                    MOVE    'E'         TO   I0443-CSU-C (IX1 1)
+183600                                             I0443-CSU-C (IX1 2)
+183700                                             I0443-CSU-C (IX1 3)
+183800                    MOVE    'ERR'       TO   FLG-ERR    FLG-GYO2
+183900     END-IF.
+184000* 送金の時は未入力可
+184100     IF      SPA-442-SKBN        NOT =    '3'
+184200        AND  SPA-443-SNO  (IX1 1)    =    ZERO
+184300                    MOVE    'E'         TO   I0443-SNO-C (IX1 1)
+184400                    MOVE    'ERR'       TO   FLG-ERR    FLG-GYO2
+184500     END-IF.
+184600     IF      SPA-442-SKBN        NOT =    '3'
+184700        AND  SPA-443-SURY (IX1)      =    ZERO
+184800                    MOVE    '7'         TO   I0443-SURY-C(IX1)
+184900                    MOVE    'ERR'       TO   FLG-ERR    FLG-GYO2
+185000     END-IF.
+185100*
+185200 SURYO-CHK-900.
+185300     IF      FLG-GYO2             NOT =   SPACE
+185400        AND  FLG-GYO                  =   SPACE
+185500             MOVE    'ERR'           TO   FLG-GYO
+185600     END-IF.
+185700*
+185800 SURYO-CHK-EXT.
+185900     EXIT.
+186000*================================================================*
+186100*    カートンＮＯの並び換え（未入力行をつめる）                  *
+186200*================================================================*
+186300 CTN-RESET1-RTN                 SECTION.
+186400 CTN-RESET1-000.
+186500     INITIALIZE                       WRK-CN-AREA.
+186600     PERFORM   VARYING     IX2    FROM    1   BY   1
+186700*@@@            UNTIL      IX2    >      39
+186800                UNTIL      IX2    >      78                       040213
+186900                MOVE     SPA-443-SNO(IX1 IX2)  TO   WRK-SNO(IX2)
+187000                MOVE     SPA-443-ENO(IX1 IX2)  TO   WRK-ENO(IX2)
+187100                MOVE     SPA-443-CSU(IX1 IX2)  TO   WRK-CSU(IX2)
+187200*+++  2000/1/25  OST ADD START
+187300                MOVE     SPA-443-GEN(IX1 IX2)  TO   WRK-GEN(IX2)
+187400*+++  ADD END
+187500     END-PERFORM.
+187600*
+187700     MOVE    1                   TO   IX3.
+187800     PERFORM   VARYING     IX2    FROM    1   BY   1
+187900*@@@            UNTIL      IX2    >      39
+188000                UNTIL      IX2    >      78                       040213
+188100                IF       WRK-SNO (IX2)    =   ZERO
+188200                         CONTINUE
+188300                ELSE
+188400                         IF    IX2    NOT =   IX3
+188500                               MOVE  WRK-CN-TBL (IX2)
+188600                                          TO  WRK-CN-TBL (IX3)
+188700                               INITIALIZE     WRK-CN-TBL (IX2)
+188800                         END-IF
+188900                         ADD   1          TO   IX3
+189000                END-IF
+189100     END-PERFORM.
+189200 CTN-RESET1-EXT.
+189300     EXIT.
+189400*================================================================*
+189500*    カートンＮＯの並び換え（昇順にする）                        *
+189600*================================================================*
+189700 CTN-RESET2-RTN                 SECTION.
+189800 CTN-RESET2-000.
+189900     MOVE    SPACE               TO   FLG-SET.
+190000     PERFORM    UNTIL      FLG-SET  NOT =   SPACE
+190100*
+190200             MOVE      '1'                  TO    FLG-SET
+190300             PERFORM   VARYING     IX2    FROM    1   BY   1
+190400*@@@                    UNTIL      IX2      >    39
+190500                        UNTIL      IX2      >    78               040213
+190600                        OR    WRK-SNO(IX2)  =    ZERO
+190700*
+190800                COMPUTE   IX3   =   IX2     +    1
+190900                IF     WRK-SNO (IX2)        >    WRK-SNO (IX3)
+191000                  AND  WRK-SNO (IX3)    NOT =    ZERO
+191100                       MOVE     WRK-CN-TBL(IX2)
+191200*@@@                                        TO    WRK-CN-TBL(40)
+191300                                            TO    WRK-CN-TBL(79)  040213
+191400                       MOVE     WRK-CN-TBL(IX3)
+191500                                            TO    WRK-CN-TBL(IX2)
+191600*@@@                   MOVE     WRK-CN-TBL(40)
+191700                       MOVE     WRK-CN-TBL(79)                    040213
+191800                                            TO    WRK-CN-TBL(IX3)
+191900*@@@                   INITIALIZE                 WRK-CN-TBL(40)
+192000                       INITIALIZE                 WRK-CN-TBL(79)  040213
+192100                       MOVE     SPACE       TO    FLG-SET
+192200                END-IF
+192300             END-PERFORM
+192400     END-PERFORM.
+192500* 終了未入力時、開始をセット
+192600     PERFORM   VARYING     IX2    FROM    1   BY   1
+192700*@@@            UNTIL      IX2     >     39
+192800                UNTIL      IX2     >     78                       040213
+192900             IF        WRK-SNO (IX2)     NOT =    ZERO
+193000                  AND  WRK-ENO (IX2)         =    ZERO
+193100                MOVE   WRK-SNO (IX2)        TO    WRK-ENO (IX2)
+193200             END-IF
+193300     END-PERFORM.
+193400 CTN-RESET2-EXT.
+193500     EXIT.
+193600*================================================================*
+193700*    製品（該非）チェック                                        *
+193800*================================================================*
+193900 SEIN-CHK-RTN                   SECTION.
+194000 SEIN-CHK-000.
+194100     IF     FLG-DENSYU     =    '1'
+194200*****  AND  HDP-KGR        =    '3F'                              970916
+194300       AND  HDP-KGR        =    '3F'  OR  '3H'                    970916
+194400       AND (HDP-GAI        =    ' ' OR '1' )
+194910            MOVE    '1'              TO   SPA-443-MIC  (IX1)
+195100     END-IF.
+195200*
+195300     MOVE    SPACE                   TO  FLG-CHK.
+195400     MOVE    SPACE                   TO  CHG-KBN CHG-FCD CHG-KGR
+195500                                         CHG-TBL CHG-FLG.
+195600     MOVE    ZERO                    TO  CHG-KGR.
+195700     INITIALIZE                          CSP-REC.
+195800*      仲介分のチェックは無し
+195900**   IF      SPA-400-ACCO   =  '3923920'  OR  '3923921'           970407JF
+196000**           OR  '3923922' OR  '3923923'  OR  '3923924'           970407JF
+196100**                         OR  '3923930'  OR  '3923931'           970407JF
+196200**           OR  '3923932' OR  '3923933'  OR  '3923934'           970407JF
+196300**                         OR  '3923940'  OR  '3923941'           970407JF
+196400**           OR  '3923942' OR  '3923943'  OR  '3923944'           970407JF
+196500**                         OR  '3928230'  OR  '3928231'           970407JF
+196600**           OR  '3928232' OR  '3928233'  OR  '3928234'           970407JF
+196700**                         OR  '3929020'  OR  '3929021'           970407JF
+196800**           OR  '3929022' OR  '3929023'  OR  '3929024'           970407JF
+196900**           GO       TO             SEIN-CHK-EXT                 970407JF
+197000**   END-IF.                                                      970407JF
+197100*
+197200     IF      I0443-SEIN (IX1)(1:11)   =    'MASK CHARGE'
+197300         OR  I0443-SEIN (IX1)(1:18)   =    'DEVELOPMENT CHARGE'
+197400         OR  I0443-SEIN (IX1)(1:13)   =    'CANCEL CHARGE'
+197500         OR  I0443-SEIN (IX1)(1:13)   =    'REPAIR CHARGE'
+197600         OR  I0443-SEIN (IX1)(1:14)   =    'TOOLING CHARGE'
+197700             IF       FLG-DENSYU      =    '1'
+197800                      PERFORM   TFM-A-READ-RTN
+197900             ELSE
+198000                      PERFORM   TFM-B-READ-RTN
+198100             END-IF
+198200             GO       TO             SEIN-CHK-EXT
+198300     END-IF.
+198400*
+198500* 製品コード引当マスタ検索（但し、９０番有りは発送伝票を使用）
+198600*****IF      SPA-443-SCO (IX1)       =   SPACE
+198700     IF      I0443-DENO  (IX1)     NOT   NUMERIC
+198800             MOVE    I0443-SEIN (IX1)        TO   WRK-SEIN-G
+198900             PERFORM SEIN-CHG-RTN
+199000             MOVE    WRK-SEIN-G              TO   HKT-KEY
+199100             READ    HKT-F
+199200               INVALID
+199300                     CONTINUE
+199400               NOT INVALID
+199500                     MOVE   HKT-MCD      TO   SPA-443-SCO (IX1)
+199600             END-READ
+199700     END-IF.
+199800*
+199900* ココム申請マスタ検索   ----------------------------------------*
+200000     IF      SPA-443-SCO (IX1)       =   SPACE
+200100             GO     TO   SEIN-CHK-010
+200200     END-IF.
+200300* 材料コードの時はチェック無し
+200400* 材料コードの時
+200500     PERFORM   ZAI-TBL-CHK.                                       970128JF
+200600     IF      FLG-CHK          =    'HIT'                          970128JF
+200700             PERFORM HKT-SET-RTN                                        JF
+200800     END-IF.                                                      970128JF
+200900     IF      FLG-CHK          =    'HIT'                          970128JF
+201000             GO     TO   SEIN-CHK-060                             970128JF
+201100     END-IF.                                                      970128JF
+201200* ココム申請マスタ　検索(製品コード)
+201300     IF      FLG-CHK  = 'OK'
+201400             MOVE    WRK-MCD  TO  HSP-PCD
+201500          ELSE
+201600             MOVE    SPA-443-SCO (IX1) TO  HSP-PCD
+201700     END-IF.
+201800     MOVE    '2'                     TO   HSP-RKB.
+201900     GET     ANY      'SPRD'.
+202000     IF      DB-EXCEPTION    IS    13
+202100             GO     TO   SEIN-CHK-010
+202200     END-IF.
+202300     GO     TO   SEIN-CHK-011.
+202400 SEIN-CHK-010.
+202500* ココム申請マスタ　検索 (製品名)
+202600     IF      FLG-CHK  = 'OK'
+202700             MOVE    HUJ-BKO  TO  HSP-PCD
+202800          ELSE
+202900             MOVE    I0443-SEIN (IX1)  TO  HSP-PCD
+203000     END-IF.
+203100     MOVE    '3'                     TO   HSP-RKB.
+203200     GET     ANY   'SPRD'.
+203300     IF      DB-EXCEPTION       IS    13
+203400             GO     TO          SEIN-CHK-070
+203500     END-IF.
+203600 SEIN-CHK-011.
+203700     MOVE    SPRD                    TO   CSP-REC.
+203800     IF      FLG-DENSYU         =     '2'     OR  '3'
+203900             MOVE    CSP-KBN         TO   SPA-443-GAI  (IX1)
+204000             MOVE    CSP-KBN         TO   SPA-443-TG   (IX1)
+204100             MOVE    CSP-BNO         TO   SPA-443-BNO  (IX1)
+204200     END-IF.
+204300* 未判定品
+204400     IF      CSP-KBN            =     SPACE   OR  '8'
+204500             DISPLAY 'M5504430 CSP-KBN ' CSP-KBN  UPON CONSOLE
+204600             DISPLAY 'M5504430 CSP-PCD ' CSP-PCD  UPON CONSOLE
+204700             DISPLAY 'M5504430 CSP-INM ' CSP-INM  UPON CONSOLE
+204800             DISPLAY 'M5504430 CSP-RKB ' CSP-RKB  UPON CONSOLE
+204900             MOVE    'E'             TO   I0443-SEIN-C (IX1)
+205000             MOVE    'ERR'           TO   FLG-ERR    FLG-GYO
+205100*            MOVE    'ﾐﾊﾝﾃｲﾋﾝ'       TO   O0443-EMSG (IX1)
+205200             MOVE    'ﾐﾊﾝﾃｲ SP'    TO O0443-EMSG(IX1)
+205300             GO       TO             SEIN-CHK-EXT
+205400     END-IF.
+205500*
+205600* 少額特例チェック ----------------------------------------------*
+205700     MOVE    SPACE               TO   C80-PARA.
+205800     MOVE   '9'                  TO   C80-OPEN.
+205900     CALL   'M55C80'          USING   C80-PARA.
+206000     MOVE    SPACE               TO   C80-PARA.
+206100     MOVE   '1'                  TO   C80-OPEN.
+206200     CALL   'M55C80'          USING   C80-PARA.
+206300     MOVE    SPACE                    TO   C80-PARA.              AD961128
+206400     MOVE    '5'                      TO   C80-OPEN.              AD961128
+206500     MOVE    SPA-442-ACCO             TO   C80-TKC.               AD961128
+206600     MOVE    SPA-443-PONO (IX1)       TO   C80-PNO.               AD961128
+206700     MOVE    CSP-KBN                  TO   C80-KBN.               AD961128
+206800     MOVE    CSP-BNO                  TO   C80-BNO.               AD961128
+206900     MOVE    CSP-SLKB                 TO   C80-SLKB.              AD961128
+207000     MOVE    SPA-443-SCO  (IX1)       TO   C80-PCD.               AD961128
+207100     MOVE    SPA-442-CONS             TO   C80-NUK.               AD961128
+207200     MOVE    SPA-442-LCNO             TO   C80-LCN.               AD961128
+207300     MOVE    SPA-443-TKB  (IX1)       TO   C80-TKB.               AD961128
+207400     MOVE    SPACE                    TO   C80-RC.                AD961128
+207500     CALL    'M55C80'              USING   C80-PARA.              AD961128
+207600     IF      C80-RC          =     SPACE                          AD961128
+207700             MOVE    C80-SGT         TO   SPA-443-SGT(IX1)        AD961128
+207800     ELSE                                                         AD961128
+207900             MOVE    'E'             TO   I0443-SEIN-C (IX1)      AD961128
+208000             MOVE    'ERR'           TO   FLG-ERR    FLG-GYO      AD961128
+208100             MOVE    'ｼｮｳｶﾞｸCHK?'    TO   O0443-EMSG (IX1)        AD961128
+208200             EVALUATE  C80-RC                                     AD961128
+208300               WHEN  '1'                                          AD961128
+208400                   MOVE 'ﾄｸｲｻｷ ﾅｼ  ' TO   O0443-EMSG  (IX1)       AD961128
+208500               WHEN  '2'                                          AD961128
+208600                   MOVE 'ﾆｳｹｻｷ ﾅｼ  ' TO   O0443-EMSG  (IX1)       AD961128
+208700               WHEN  '3'                                          AD961128
+208800                   MOVE 'ﾚﾝﾗｸｻｷ ﾅｼ ' TO   O0443-EMSG  (IX1)       AD961128
+208900               WHEN  '4'                                          AD961128
+209000                   MOVE 'ｸﾆｼﾞｮｳﾎｳﾅｼ' TO   O0443-EMSG  (IX1)       AD961128
+209100               WHEN  '5'                                          AD961128
+209200                   MOVE 'ｺｳｼﾞﾚ-ﾄ ﾅｼ' TO   O0443-EMSG  (IX1)       AD961128
+209300               WHEN  '6'                                          AD961128
+209400                   MOVE 'ﾄｸﾃｲ ﾁｲｷ ?' TO   O0443-EMSG  (IX1)       AD961128
+209500               WHEN  '7'                                          AD961128
+209600                   MOVE 'ｶﾞｲﾄｳﾁｭｳﾓﾝ ﾅｼ' TO   O0443-EMSG  (IX1)    AD961128
+209700               WHEN  '8'                                          AD961128
+209800                   MOVE 'E/Lﾏｽﾀ ｴﾗ-' TO   O0443-EMSG  (IX1)       AD961128
+209900             END-EVALUATE                                         AD961128
+210000             GO       TO             SEIN-CHK-EXT                 AD961128
+210100     END-IF.                                                      AD961128
+210200*
+210300* 該当品
+210400     IF      CSP-KBN      =     '9'
+210500             MOVE   'E'              TO   I0443-SEIN-C (IX1)
+210600             MOVE   'ｶﾞｲﾄｳﾋﾝ'        TO   O0443-EMSG   (IX1)
+210700             GO       TO             SEIN-CHK-060
+210800     END-IF.
+210900*
+211000* マイコン用途未出力  -------------------------------------------*
+211100     IF      FLG-DENSYU         =     '1'
+211200        AND  CSP-KBN        NOT =     '1'
+211300             GO       TO             SEIN-CHK-060
+211400     END-IF.
+211500     IF     SPA-443-SCO (IX1)(1:7)   =    SPACE
+211600             GO                 TO    SEIN-CHK-060.
+211700     MOVE   SPA-443-SCO (IX1)(1:7)   TO   HFC-FCD (1:7).
+211800     MOVE   '0'                      TO   HFC-FCD (8:1).
+211900     GET     ANY      'FCRD'.
+212000     IF      DB-EXCEPTION       IS    13
+212100             GO                 TO    SEIN-CHK-060.
+212200*
+212300*****MOVE   HFC-KCD (2) (1:1)        TO   CHG-KBN.                000914
+212400     MOVE   HFC-KCD (2) (1:2)        TO   CHG-KBN.                000914
+212500     MOVE   HFC-KGR (2)              TO   CHG-KGR.
+212600     MOVE   2                        TO   CHG-TBL.
+212700     CALL   'JCHGKGR'             USING  CHG-KBN CHG-FCD CHG-KGR
+212800                                         CHG-TBL CHG-FLG.
+212910     IF     ((CSP-KBN        =    '1')
+213000        AND  (CHG-FLG        =    '0')
+213100******* AND CHG-KGR        =    '3F'                              970916
+213200        AND  (CHG-KGR        =    '3F'  OR  '3H')                 970916
+213300        AND  (CSP-YKB        =    SPACE))
+213310        IF  CHG-KGR        =    '3F'                              050727
+213320            PERFORM        TBL-SEARCH-RTN                         050727
+213330            IF  FLG-3F     NOT  =  'OK'                           050727
+213400                MOVE    'E'             TO   I0443-SEIN-C (IX1)   050727
+213500                MOVE    'ERR'           TO   FLG-ERR    FLG-GYO   050727
+213600                MOVE    'ﾏｲｺﾝﾖｳﾄ  ?'     TO  O0443-EMSG (IX1)     050727
+213700                GO       TO             SEIN-CHK-EXT              050727
+213800            END-IF                                                050727
+213801        ELSE                                                      050727
+213802             MOVE    'E'             TO   I0443-SEIN-C (IX1)
+213803             MOVE    'ERR'           TO   FLG-ERR    FLG-GYO
+213804             MOVE    'ﾏｲｺﾝﾖｳﾄ  ?'     TO  O0443-EMSG (IX1)
+213805             GO       TO             SEIN-CHK-EXT
+213806        END-IF                                                    050727
+213810     END-IF.
+213900     IF    ((FLG-DENSYU     =    '2' OR '3' )
+214000       AND (CSP-KBN        =    '1' OR '3' OR '4' OR '8' OR ' ' )
+214100       AND (CHG-FLG        =    '0')
+214200****** AND  CHG-KGR        =    '3F'                              970916
+214300       AND (CHG-KGR        =    '3F'  OR  '3H'))                  970916
+214400             MOVE    '1'             TO   SPA-443-MIC  (IX1)
+214500     END-IF.
+214600*
+214700 SEIN-CHK-060.
+214800* ＨＳ分類コード　チェック      ---------------------------------*
+214900     IF      FLG-DENSYU     =    '1'
+215000             PERFORM   TFM-A-READ-RTN
+215100     ELSE
+215200             PERFORM   TFM-B-READ-RTN
+215300     END-IF.
+215400     IF      FLG-GYO        =     'ERR'
+215500             GO       TO             SEIN-CHK-EXT
+215600     END-IF.
+215700*
+215800             GO       TO             SEIN-CHK-EXT.
+215900 SEIN-CHK-070.
+216000     MOVE    'E'                    TO   I0443-SEIN-C (IX1).
+216100     MOVE    'ERR'                  TO   FLG-ERR    FLG-GYO.
+216200     IF      SPA-443-SCO (IX1)  =   SPACE
+216300             MOVE  'ｾｲﾋﾝｺ-ﾄﾞ ?'     TO   O0443-EMSG (IX1)
+216400     ELSE
+216500             MOVE  'ﾐﾊﾝﾃｲ HS'          TO   O0443-EMSG (IX1)
+216600     END-IF.
+216700     GO       TO                    SEIN-CHK-EXT.
+216800 SEIN-CHK-090.
+216900*-   MOVE    'E'                     TO   I0443-SEIN-C (IX1).
+217000*-   MOVE    'ERR'                   TO   FLG-ERR    FLG-GYO.
+217100*-   MOVE    'FCﾌｧﾐﾘﾐﾄｳﾛｸ'           TO   O0443-EMSG (IX1).
+217200 SEIN-CHK-EXT.
+217300     EXIT.
+217400******************************************************************970128JF
+217500*    材料コードファイル（テーブル）検索
+217600******************************************************************970128JF
+217700 ZAI-TBL-CHK                     SECTION.                         970128JF
+217800 ZAI-TBL-CHK-000.                                                 970128JF
+217900*                                                                 970128JF
+218000*    PERFORM  VARYING  IX4  FROM  1  BY  1                        970128JF
+218100*             UNTIL  ( IX4 > 100 )  OR                            970128JF
+218200*                    ( SPA-MCD(IX4) = SPACE ) OR                  970128JF
+218300*                    ( FLG-CHK  =  'HIT' )                        970128JF
+218400*        IF  SPA-443-SCO (IX1)  =  SPA-MCD(IX4)                   970128JF
+218500*            MOVE  'HIT'          TO        FLG-CHK               970128JF
+218600*        END-IF                                                   970128JF
+218700*    END-PERFORM.                                                 970128JF
+218800***  ７９上期システム変更対応     T.TERADA(SHN)                   020320
+218900     IF  SPA-443-SCO (IX1)  =  '20128910000100'                   970128JF
+219000                          OR   '20128920000100'                   970128JF
+219100                          OR   '20128930000100'                   970128JF
+219200                          OR   '20128940000100'                   970128JF
+219300                          OR   '20128950000100'                   970128JF
+219400                          OR   '20128960000100'                   970128JF
+219500                          OR   '20128970000100'                   970128JF
+219600                          OR   '20128980000100'                   970128JF
+219700                          OR   '20128990000100'                   970128JF
+219800                          OR   '20129000000100'                   970128JF
+219900                          OR   '20129010000100'                   020320JF
+220000                          OR   '20129020000100'                   020320JF
+220100                          OR   '20129030000100'                   020320JF
+220200                          OR   '20129040000100'                   020320JF
+220300                          OR   '20129050000100'                   040325JF
+220400                          OR   '20129110000100'                   030916JF
+220500                          OR   '20129210000100'                   030916JF
+220600                          OR   '20129310000100'                   040420JF
+220700         MOVE  'HIT'          TO        FLG-CHK                   970128JF
+220800     END-IF.                                                      970128JF
+220900*                                                                 970128JF
+221000 ZAI-TBL-CHK-EXT.                                                 970128JF
+221100     EXIT.                                                        970128JF
+221200*================================================================*
+221300*    製品名の’－’を削除する                                    *
+221400*================================================================*
+221500 SEIN-CHG-RTN                   SECTION.
+221600 SEIN-CHG-000.
+221700     MOVE    WRK-SEIN-G      TO  WRK-SEIN-GG.
+221800     MOVE    SPACE           TO  WRK-SEIN-G.
+221900     MOVE     1              TO  WRK-IX1   WRK-IX2.
+222000     PERFORM  WITH  TEST  BEFORE
+222100         UNTIL  WRK-IX1  >  20
+222200         IF  WRK-SEIN-XX (WRK-IX1)  NOT  =  '-'  AND
+222300             WRK-SEIN-XX (WRK-IX1)  NOT  =  ' '
+222400             MOVE  WRK-SEIN-XX(WRK-IX1)  TO  WRK-SEIN-X(WRK-IX2)
+222500             ADD    1                    TO  WRK-IX2
+222600         END-IF
+222700         ADD     1       TO   WRK-IX1
+222800     END-PERFORM.
+222900 SEIN-CHG-EXT.
+223000     EXIT.
+223100*================================================================*
+223200*    東京ファミリ名　検索（１度目）  ９０番有り                  *
+223300*================================================================*
+223400 TFM-A-READ-RTN                SECTION.
+223500 TFM-A-READ-000.
+223600     IF    ( HDP-BMC   NOT =  SPACE )
+223700         MOVE    HDP-BMC         TO      SPA-443-BMC (IX1)
+223800         GO      TO              TFM-A-READ-EXT
+223900     END-IF.
+224000*
+224100     IF    ( HDP-KGR = '00' )  OR  ( HDP-KGR (2:1) = 'Z' )
+224200         MOVE    HDP-SNM         TO      TFM-HNM
+224300         MOVE    '1'             TO      TFM-KBN
+224400      ELSE
+224500         MOVE    HDP-FNM         TO      TFM-HNM
+224600         MOVE    SPACE           TO      TFM-KBN
+224700     END-IF.
+224800*==  DISPLAY 'M5504430 TFM-KEY (1) ' TFM-KEY  UPON CONSOLE.
+224900     READ    TFM-F
+225000       INVALID
+225100             PERFORM   TFM-A-READ2-RTN
+225200       NOT INVALID
+225300             IF     TFM-BMC      =    SPACE
+225400                    PERFORM   TFM-ERR-RTN
+225500             ELSE
+225600*--  DISPLAY 'M5504430 TFM-BMC (1) ' TFM-BMC  UPON CONSOLE
+225700                    MOVE  TFM-BMC     TO  SPA-443-BMC (IX1)
+225800             END-IF
+225900     END-READ.
+226000 TFM-A-READ-EXT.
+226100     EXIT.
+226200*================================================================*
+226300*    東京ファミリ名　検索（２度目）  ９０番有り                  *
+226400*================================================================*
+226500 TFM-A-READ2-RTN                SECTION.
+226600 TFM-A-READ2-000.
+226700     MOVE    HDP-SNM                 TO   TFM-HNM.
+226800     MOVE    '2'                     TO   TFM-KBN.
+226900*--  DISPLAY 'M5504430 TFM-KEY (2) ' TFM-KEY  UPON CONSOLE.
+227000     READ    TFM-F
+227100       INVALID
+227200             PERFORM   TFM-ERR-RTN
+227300       NOT INVALID
+227400             IF     TFM-BMC      =    SPACE
+227500                    PERFORM   TFM-ERR-RTN
+227600             ELSE
+227700*--  DISPLAY 'M5504430 TFM-BMC (2) ' TFM-BMC  UPON CONSOLE
+227800                    MOVE  TFM-BMC     TO  SPA-443-BMC (IX1)
+227900             END-IF
+228000     END-READ.
+228100 TFM-A-READ2-EXT.
+228200     EXIT.
+228300*================================================================*
+228400*    東京ファミリ名　検索（１度目）  ９０番無し・送金            *
+228500*================================================================*
+228600 TFM-B-READ-RTN                SECTION.
+228700 TFM-B-READ-000.
+228800***  ７９上期システム変更対応      T.TERADA(SHN)                  020320
+228900***  ７９下期システム変更対応  '4X'廃止  '6X'追加
+229000***  IF    ( CHG-KGR = '00' )  OR  ( CHG-KGR (2:1) = 'Z' )
+229100     IF    ( CHG-KGR = '00' )                                     020320
+229200       OR  ( CHG-KGR = '1Z' OR '6X' OR '4Z' OR '2Z' OR '3Z' OR    020320
+229300                       '5Z' OR '6Z' OR '6Y' OR '6W' OR '6R' OR    020320
+229400                       '8Z' OR '6V' OR '9Z' OR 'DZ' OR '7Z' OR    030916
+229500                       '4X' OR '4Y' )                             050317
+229600       OR  ( CHG-KGR = '  ' )
+229700             MOVE    I0443-SEIN (IX1) TO   TFM-HNM
+229800             MOVE    SPACE            TO   TFM-KBN
+229900     ELSE
+230000             MOVE    HFC-FNM          TO   TFM-HNM
+230100             MOVE    SPACE            TO   TFM-KBN
+230200     END-IF.
+230300*--  DISPLAY 'M5504430 TFM-KEY (1) ' TFM-KEY  UPON CONSOLE.
+230400     READ    TFM-F
+230500       INVALID
+230600             PERFORM   TFM-B-READ2-RTN
+230700       NOT INVALID
+230800             IF     TFM-BMC      =    SPACE
+230900                    PERFORM   TFM-ERR-RTN
+231000             ELSE
+231100*--  DISPLAY 'M5504430 TFM-BMC (1) ' TFM-BMC  UPON CONSOLE
+231200                    MOVE  TFM-BMC     TO  SPA-443-BMC (IX1)
+231300                    MOVE  TFM-GHS     TO  SPA-443-GHS (IX1)
+231400             END-IF
+231500     END-READ.
+231600 TFM-B-READ-EXIT.
+231700     EXIT.
+231800*================================================================*
+231900*    東京ファミリ名　検索（２度目）  ９０番無し・送金            *
+232000*================================================================*
+232100 TFM-B-READ2-RTN                SECTION.
+232200 TFM-B-READ2-000.
+232300     MOVE    I0443-SEIN (IX1)        TO   TFM-HNM.
+232400     MOVE    '2'                     TO   TFM-KBN.
+232500*--  DISPLAY 'M5504430 TFM-KEY (2) ' TFM-KEY  UPON CONSOLE.
+232600     READ    TFM-F
+232700       INVALID
+232800             PERFORM  TFM-ERR-RTN
+232900       NOT INVALID KEY
+233000             IF     TFM-BMC      =    SPACE
+233100                    PERFORM   TFM-ERR-RTN
+233200             ELSE
+233300*--  DISPLAY 'M5504430 TFM-BMC (2) ' TFM-BMC  UPON CONSOLE
+233400                    MOVE  TFM-BMC     TO  SPA-443-BMC (IX1)
+233500                    MOVE  TFM-GHS     TO  SPA-443-GHS (IX1)
+233600             END-IF
+233700     END-READ.
+233800 TFM-B-READ2-EXT.
+233900     EXIT.
+234000*================================================================*
+234100*    東京ファミリ検索エラー　表示                                *
+234200*================================================================*
+234300 TFM-ERR-RTN                    SECTION.
+234400     IF      O0443-EMSG (IX1)   =   SPACE
+234500             MOVE    'HS ﾐﾄｳﾛｸ '    TO   O0443-EMSG   (IX1)
+234600     END-IF.
+234700     MOVE    'ERR'                  TO   FLG-ERR   FLG-GYO.
+234800     MOVE    'E'                    TO   I0443-SEIN-C (IX1).
+234900 TFM-ERR-000.
+235000*
+235100 TFM-ERR-EXT.
+235200     EXIT.
+235300*================================================================*
+235400*    明細行の入力内容チェック　９０番無し・送金                  *
+235500*================================================================*
+235600 BODY-CHKB-RTN                  SECTION.
+235700 BODY-CHKB-000.
+235800*
+235900* 区分　チェック      ------------------------------------------*
+236000*
+236100* 伝票　チェック      ------------------------------------------*
+236200     IF      I0443-DENO-C (IX1)(4:1)  =   'E'
+236300         OR  I0443-DENO   (IX1)      IS   NUMERIC
+236400             MOVE     '7'            TO   I0443-DENO-C (IX1)
+236500             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+236600     END-IF.
+236700*
+236800* 製品名　チェック    ------------------------------------------*
+236900     IF     (I0443-SEIN-C (IX1)(4:1)  =   'E'    )
+237000        OR  (I0443-SEIN   (IX1)       =   SPACE  )
+237100             MOVE     '7'            TO   I0443-SEIN-C (IX1)
+237200             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+237300     END-IF.
+237400*
+237500* ＳＰＡセット
+237600     PERFORM   SPA-INPUT-RTN.
+237700     MOVE    SPA-442-TUKA            TO   SPA-443-TKB (IX1).
+237800*
+237900* ＩＮＶ発行（ボディ）存在チェック  ----------------------------*
+238000     PERFORM   IPB-CHK-RTN.
+238100     IF      FLG-GYO         NOT =   SPACE
+238200             GO                      TO   BODY-CHKB-EXT
+238300     END-IF.
+238400* 該非　チェック    --------------------------------------------*
+238500     PERFORM   SEIN-CHK-RTN.
+238600*
+238700* 単位　チェック      ----------------------------------------*
+238800     MOVE    SPACE                   TO   O0443-TANN-B (IX1).
+238900     MOVE    'A'                     TO   O0443-TANN-C (IX1).
+239000     IF    ( I0443-TANC-C (IX1)(4:1)  =   'E' )
+239100        OR ( I0443-TANC   (IX1)   NOT =   '1'  AND '2' )
+239200             MOVE     '7'            TO   I0443-TANC-C (IX1)
+239300             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+239400     ELSE
+239500             EVALUATE    I0443-TANC (IX1)
+239600                 WHEN    '1'   MOVE  'PCS.'  TO  O0443-TANN(IX1)
+239700                 WHEN    '2'   MOVE  'SET.'  TO  O0443-TANN(IX1)
+239800             END-EVALUATE
+239900     END-IF.
+240000* CASE  チェック   -------------------------------------------*
+240100     IF    ( I0443-CASE-C (IX1)(4:1)  =   'E' )
+240200             MOVE     '7'            TO   I0443-CASE-C (IX1)
+240300             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+240400     ELSE
+240500* ケースマーク管理　存在チェック
+240600             MOVE    SPACE                TO   CMK-KEY
+240700             MOVE    SPA-442-ACCO         TO   CMK-TKC
+240800             MOVE    I0443-CASE (IX1)     TO   CMK-EDA
+240900             READ    CMK-F
+241000               INVALID
+241100                   MOVE   '7'        TO   I0443-CASE-C (IX1)
+241200                   MOVE   'ERR'      TO   FLG-ERR    FLG-GYO
+241300             END-READ
+241400     END-IF.
+241500* 備考    チェック   -----------------------------------------*
+241600     IF    ( I0443-ILNO-C (IX1)(4:1)  =   'E' )
+241700             MOVE     '7'            TO   I0443-ILNO-C (IX1)
+241800             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+241900     END-IF.
+242000* 選択区分　チェック    --------------------------------------*
+242100     IF    ( I0443-SEL-C  (IX1)(4:1)  =   'E'  )
+242200        OR ( I0443-SEL    (IX1)  NOT  =   SPACE  AND  'S' )
+242300             MOVE     '7'            TO   I0443-SEL-C  (IX1)
+242400             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+242500     END-IF.
+242600* Ｐ／Ｏ　チェック    ----------------------------------------*
+242700     IF    ( I0443-PONO-C (IX1)(4:1)  =   'E' )
+242800       OR  ( FLG-DENSYU               =   '2'
+242900        AND  I0443-PONO   (IX1)       =   SPACE  )
+243000             MOVE     '7'            TO   I0443-PONO-C (IX1)
+243100             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+243200     END-IF.
+243300* ＰＥＤＡ　チェック    --------------------------------------*
+243400     IF    ( I0443-PEDA-C (IX1)(4:1)  =   'E' )
+243500             MOVE     '7'            TO   I0443-PEDA-C (IX1)
+243600             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+243700     END-IF.
+243800* Ｐ／Ｎ　チェック      --------------------------------------*
+243900     IF      I0443-PN-C   (IX1)(4:1)  =   'E'
+244000             MOVE     '7'            TO   I0443-PN-C   (IX1)
+244100             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+244200     END-IF.
+244300* 単価　チェック        --------------------------------------*
+244400     IF    ( I0443-TANK-C (IX1)(4:1)  =   'E'  )
+244500             MOVE     '7'            TO   I0443-TANK-C (IX1)
+244600             MOVE     'ERR'          TO   FLG-ERR    FLG-GYO
+244700     END-IF.
+244800* カートン・数量  チェック     -------------------------------*
+244900     PERFORM   SURYO-CHK-RTN.
+245000*
+245100 BODY-CHKB-EXT.
+245200     EXIT.
+245300*================================================================*
+245400*    確認入力      　                                            *
+245500*================================================================*
+245600 KAKU-RTN                       SECTION.
+245700 KAKU-000.
+245800*
+245900     EVALUATE  ANY-FUNC
+246000*  実行
+246100         WHEN  'E000'      PERFORM  KAKU-CHK-RTN
+246200*  取消
+246300         WHEN  'F004'      PERFORM  CANCEL-RTN
+246400*  前頁
+246500         WHEN  'F007'      PERFORM  ZEN-PAGE-RTN
+246600*  次頁
+246700         WHEN  'F008'      PERFORM  JI-PAGE-RTN
+246800*  ＰＦキーエラー
+246900         WHEN  OTHER       MOVE     'ERR'      TO    FLG-ERR
+247000                           MOVE      08        TO    MSG-CD
+247100     END-EVALUATE.
+247200 KAKU-RTN-EXT.
+247300     EXIT.
+247400*================================================================*
+247500*    確認入力      　                                            *
+247600*================================================================*
+247700 KAKU-CHK-RTN                   SECTION.
+247800 KAKU-CHK-000.
+247900     IF      I0443-KAKU-C(4:1)  =  'E'
+248000             MOVE    '7'            TO   I0443-KAKU-C
+248100             IF      FLG-ERR    =   SPACE
+248200                     MOVE    'ERR'       TO   FLG-ERR
+248300                     MOVE    01          TO   MSG-CD
+248400             END-IF
+248500             GO                     TO   KAKU-CHK-EXT
+248600     END-IF.
+248700*
+248800     IF      I0443-KAKU         =  ' '
+248900             CONTINUE
+249000     ELSE
+249100             MOVE    '7'            TO   I0443-KAKU-C
+249200             IF      FLG-ERR    =   SPACE
+249300                     MOVE    'ERR'       TO   FLG-ERR
+249400                     MOVE    01          TO   MSG-CD
+249500             END-IF
+249600             GO                     TO   KAKU-CHK-EXT
+249700     END-IF.
+249800*
+249900     IF      SPA-442-MODE   NOT =  'ADD'  AND  'UPD'
+250000             GO                     TO   KAKU-CHK-EXT
+250100     END-IF.
+250200* ファイル更新
+250300     PERFORM   VARYING    IX1    FROM    1    BY   1
+250400               UNTIL      IX1    >       5
+250500               OR     FLG-ERR    NOT =   SPACE
+250600               IF    SPA-443-KBN (IX1)  =  'M' OR 'A' OR 'D'
+250700                     PERFORM   IPB-UPDATE-RTN
+250800                     PERFORM   CTN-UPDATE-RTN
+250900               END-IF
+251000     END-PERFORM.
+251100* 更新後、画面編集
+251200     IF      FLG-ERR        NOT =  SPACE
+251300             TRANSACTION CANCEL
+251400             GO                     TO   KAKU-CHK-EXT
+251500     END-IF.
+251600* 更新後、画面編集
+251700     IF     SPA-443-PAGE        =    1
+251800        MOVE  SPACE                     TO   WRK-DENO
+251900                                             WRK-SEIN
+252000     ELSE
+252100        MOVE  SPA-443-O-DENO (1)        TO   WRK-DENO
+252200        MOVE  SPA-443-O-SEIN (1)        TO   WRK-SEIN
+252300     END-IF.
+252400     IF     SPA-443-PAGE        >    1
+252500        AND SPA-443-O-DENO (1)  =    SPACE
+252600        AND SPA-443-O-SEIN (1)  =    SPACE
+252700        MOVE  SPA-443-DENO (1)          TO   WRK-DENO
+252800        MOVE  SPA-443-SEIN (1)          TO   WRK-SEIN
+252900        PERFORM   VARYING    IX1    FROM    2    BY   1
+253000                  UNTIL      IX1    >       5
+253100        IF     (SPA-443-SEIN (IX1)  NOT =   SPACE
+253200           AND  SPA-443-DENO (IX1)     <    WRK-DENO )
+253300         OR    (SPA-443-SEIN (IX1)  NOT =   SPACE
+253400           AND  SPA-443-DENO (IX1)     =    WRK-DENO
+253500           AND  SPA-443-SEIN (IX1)     <    WRK-SEIN )
+253600              MOVE   SPA-443-DENO (IX1) TO   WRK-DENO
+253700              MOVE   SPA-443-SEIN (IX1) TO   WRK-SEIN
+253800        END-IF
+253900        END-PERFORM
+254000     END-IF.
+254100*
+254200     PERFORM  IPB-START1-RTN.
+254300     MOVE   ZERO                    TO   IX1.
+254400     PERFORM  SPA-SET-RTN
+254500              UNTIL    FLG-READ  =  'END'.
+254600*
+254700     MOVE     1                     TO   SPA-TRNKBN.
+254800     PERFORM   BODY-SET-RTN.
+254900     PERFORM   ATTR-SET-RTN.
+255000     MOVE     28                    TO   MSG-CD.
+255100 KAKU-CHK-EXT.
+255200     EXIT.
+255300*================================================================*
+255400*    項目戻り      　                                            *
+255500*================================================================*
+255600 CANCEL-RTN                      SECTION.
+255700 CANCEL-000.
+255800     IF        SPA-442-MODE  NOT =  'ADD'  AND  'UPD'
+255900               MOVE  'END'       TO   FLG-END
+256000               GO     TO         CANCEL-EXT
+256100     END-IF.
+256200*
+256300     PERFORM   VARYING    IX1    FROM    1    BY   1
+256400               UNTIL      IX1    >       5
+256500               IF    SPA-443-SEIN(IX1)  =  SPACE
+256600                     MOVE   SPACE     TO   I0443-BTBL (IX1)
+256700               END-IF
+256800     END-PERFORM.
+256900     MOVE    1                   TO   SPA-TRNKBN.
+257000     PERFORM   ATTR-SET-RTN.
+257100 CANCEL-EXT.
+257200     EXIT.
+257300*================================================================*
+257400*    更新処理　ＩＮＶ発行（ボディ）                              *
+257500*================================================================*
+257600 IPB-UPDATE-RTN                  SECTION.
+257700 IPB-UPDATE-000.
+257800* ＩＮＶ発行（ボディ）検索   ------------------------------------*
+257900     MOVE    SPA-442-ACCO        TO   IPB-TKC.
+258000     MOVE    SPA-442-INVO        TO   IPB-INO.
+258100     MOVE    SPA-443-DENO (IX1)  TO   IPB-DNO.
+258200     MOVE    SPACE               TO   IPB-KBN.
+258300     MOVE    SPA-443-SEIN (IX1)  TO   IPB-SNM.
+258400     READ    IPB-F
+258500       INVALID
+258600             IF    SPA-443-KBN (IX1)  =  'M'  OR  'D'
+258700                   MOVE    'ERR'      TO   FLG-ERR
+258800                   MOVE     45        TO   MSG-CD
+258900                   GO      TO         IPB-UPDATE-EXT
+259000             END-IF
+259100       NOT INVALID
+259200             IF    SPA-443-KBN (IX1)  =  'A'
+259300                   MOVE    'ERR'      TO   FLG-ERR
+259400                   MOVE     44        TO   MSG-CD
+259500                   GO      TO         IPB-UPDATE-EXT
+259600             END-IF
+259700     END-READ.
+259800* ＩＮＶ発行（ボディ）削除   ------------------------------------*
+259900     IF      SPA-443-KBN (IX1)  =  'D'
+260000             DELETE        IPB-F
+260100             GO            TO         IPB-UPDATE-EXT
+260200     END-IF.
+260300* ＩＮＶ発行（ボディ）編集   ------------------------------------*
+260400     IF      SPA-443-KBN (IX1)  =  'A'
+260500             MOVE    SPACE               TO   IPB-REC
+260600             INITIALIZE                       IPB-REC
+260700             MOVE    SPA-442-ACCO        TO   IPB-TKC
+260800             MOVE    SPA-442-INVO        TO   IPB-INO
+260900             MOVE    SPA-443-DENO (IX1)  TO   IPB-DNO
+261000             MOVE    SPACE               TO   IPB-KBN
+261100             MOVE    SPA-443-SEIN (IX1)  TO   IPB-SNM
+261200     END-IF.
+261300*
+261400     MOVE    SPA-443-PONO(IX1)        TO   IPB-PNO.
+261500     MOVE    SPA-443-PEDA(IX1)        TO   IPB-BKA.
+261600     MOVE    SPA-443-NTB (IX1)        TO   IPB-NTB.
+261700     MOVE    SPA-443-SCO (IX1)        TO   IPB-SCO.
+261800     MOVE    SPA-443-SURY(IX1)        TO   IPB-SUR.
+261900     MOVE    SPA-443-TANK(IX1)        TO   IPB-TNK.
+262000     MOVE    SPA-443-BMC (IX1)        TO   IPB-BMC.
+262100*
+262200     MOVE    SPA-443-GAI (IX1)        TO   IPB-GAI.
+262300     MOVE    SPA-443-TKB (IX1)        TO   IPB-TKB.
+262400     MOVE    SPA-443-GHS (IX1)        TO   IPB-GHS.
+262500     MOVE    SPA-443-MIC (IX1)        TO   IPB-MIC.
+262600*
+262700     MOVE    SPA-443-SEIN1(IX1)       TO   IPB-HN1.
+262800     MOVE    SPA-443-TANK1(IX1)       TO   IPB-TN1.
+262900     MOVE    SPA-443-SEIN2(IX1)       TO   IPB-HN2.
+263000     MOVE    SPA-443-TANK2(IX1)       TO   IPB-TN2.
+263100     MOVE    SPA-443-SEIN3(IX1)       TO   IPB-HN3.
+263200     MOVE    SPA-443-TANK3(IX1)       TO   IPB-TN3.
+263300*
+263400     MOVE    SPA-443-CASE (IX1)       TO   IPB-KMK.
+263500     MOVE    SPA-443-ILNO (IX1)       TO   IPB-IL.
+263600     MOVE    SPA-443-PN   (IX1)       TO   IPB-PN.
+263700     MOVE    SPA-443-BNO  (IX1)       TO   IPB-BNO.
+263800*
+263900     IF      SPA-443-DENO (IX1)  IS  NUMERIC
+264000        IF  (SPA-443-GAI  (IX1)  NOT =  ' ' AND '1' AND '9' )
+264100         OR (SPA-443-TG   (IX1)      =  '2' )
+264200             GO      TO               IPB-UPDATE-500
+264300        END-IF
+264400     END-IF.
+264500     MOVE    SPA-443-SGT  (IX1)       TO   IPB-SGT.
+264600*
+264700 IPB-UPDATE-500.
+264800     IF      SPA-442-CONS    =       SPACE
+264900             MOVE    SPA-YKJ-CCM-01   TO   IPB-CCM
+265000     ELSE
+265100             MOVE    SPA-YKJ-CCM-03   TO   IPB-CCM
+265200     END-IF.
+265300*
+265400     MOVE    SPA-443-TG   (IX1)       TO   IPB-TG.
+265500     MOVE    SPA-443-DTL  (IX1)       TO   IPB-DTL.
+265600     MOVE    SPA-443-TANC (IX1)       TO   IPB-TANI.
+265700*
+265800* ＩＮＶ発行（ボディ）更新   ------------------------------------*
+265900     IF      SPA-443-KBN (IX1)  =  'A'
+266000             MOVE     SPA-SYS-DATE            TO   IPB-YMD
+266100             WRITE    IPB-REC
+266200               INVALID
+266300                      MOVE    'ERR'           TO   FLG-ERR
+266400                      MOVE     12             TO   MSG-CD
+266500              END-WRITE
+266600     ELSE
+266700             REWRITE    IPB-REC
+266800     END-IF.
+266900*
+267000 IPB-UPDATE-EXT.
+267100     EXIT.
+267200*================================================================*
+267300*    更新処理　カートンＮＯファイル                              *
+267400*================================================================*
+267500 CTN-UPDATE-RTN                  SECTION.
+267600 CTN-UPDATE-000.
+267700     MOVE    SPACE               TO   FLG-INV.
+267800     MOVE    ZERO                TO   IX2.
+267900* カートンＮＯファイル検索   ------------------------------------*
+268000     MOVE    SPA-442-ACCO        TO   CTN-TKC.
+268100     MOVE    SPA-442-INVO        TO   CTN-INO.
+268200     MOVE    SPA-443-DENO (IX1)  TO   CTN-DNO.
+268300     MOVE    SPACE               TO   CTN-KBN.
+268400     MOVE    SPA-443-SEIN (IX1)  TO   CTN-SNM.
+268500     MOVE    ZERO                TO   CTN-SEQ.
+268600     START   CTN-F       KEY     >=   CTN-KEY
+268700       INVALID
+268800         MOVE    'INV'           TO   FLG-INV
+268900       NOT INVALID
+269000         PERFORM   CTN-READ-RTN
+269100     END-START.
+269200*
+269300* 削除    -------------------------------------------------------*
+269400     IF      SPA-443-KBN (IX1)     =   'D'
+269500             GO                  TO   CTN-UPDATE-800
+269600     END-IF.
+269700*
+269800 CTN-UPDATE-500.
+269900* 更新    -------------------------------------------------------*
+270000     ADD     1                   TO   IX2.
+270100*@@@ IF      IX2                 >     39
+270200     IF      IX2                 >     78                         040213
+270300             GO                  TO   CTN-UPDATE-800
+270400     END-IF.
+270500     IF      SPA-443-SNO (IX1 IX2) =   ZERO
+270600             GO                  TO   CTN-UPDATE-800
+270700     END-IF.
+270800* カートンＮＯファイル編集   ------------------------------------*
+270900     IF      FLG-INV               =   'INV'
+271000             MOVE    SPACE               TO   CTN-REC
+271100             INITIALIZE                       CTN-REC
+271200             MOVE    SPA-442-ACCO        TO   CTN-TKC
+271300             MOVE    SPA-442-INVO        TO   CTN-INO
+271400             MOVE    SPA-443-DENO (IX1)  TO   CTN-DNO
+271500             MOVE    SPACE               TO   CTN-KBN
+271600             MOVE    SPA-443-SEIN (IX1)  TO   CTN-SNM
+271700             MOVE    IX2                 TO   CTN-SEQ
+271800     END-IF.
+271900*
+272000     MOVE    SPA-443-SNO (IX1 IX2)   TO   CTN-SNO.
+272100     MOVE    SPA-443-ENO (IX1 IX2)   TO   CTN-ENO.
+272200     IF      SPA-443-ENO (IX1 IX2)   =    ZERO
+272300             MOVE    SPA-443-CSU (IX1 IX2)   TO   CTN-CSU
+272400     ELSE
+272500             COMPUTE CTN-CSU      =    SPA-443-CSU (IX1 IX2)
+272600                                    * (SPA-443-ENO (IX1 IX2)
+272700                                    -  SPA-443-SNO (IX1 IX2)  + 1)
+272800     END-IF.
+272900*
+273000*+++ 2000/1/19  OST ADD START
+273100     MOVE    SPA-443-GEN (IX1 IX2)   TO   CTN-GEN.
+273200*+++ ADD END
+273300     IF      FLG-INV               =   'INV'
+273400             IF      SPA-SYS-DATE(1:2)   >    90
+273500                     MOVE   '19'         TO   CTN-YMD(1:2)
+273600             ELSE    MOVE   '20'         TO   CTN-YMD(1:2)
+273700             END-IF
+273800             MOVE    SPA-SYS-DATE        TO   CTN-YMD(3:6)
+273900     END-IF.
+274000*
+274100     IF      FLG-INV               =   'INV'
+274200             WRITE    CTN-REC
+274300               INVALID
+274400                      MOVE    'ERR'      TO   FLG-ERR
+274500                      MOVE     12        TO   MSG-CD
+274600                      GO                 TO   CTN-UPDATE-EXT
+274700             END-WRITE
+274800     ELSE
+274900             REWRITE  CTN-REC
+275000     END-IF.
+275100*
+275200     IF      FLG-INV               =   SPACE
+275300             PERFORM   CTN-READ-RTN
+275400     END-IF.
+275500     GO                          TO   CTN-UPDATE-500.
+275600*
+275700 CTN-UPDATE-800.
+275800* 不要ファイルの削除      ---------------------------------------*
+275900     PERFORM  UNTIL    FLG-INV   NOT =   SPACE
+276000              DELETE    CTN-F
+276100              PERFORM   CTN-READ-RTN
+276200     END-PERFORM.
+276300*
+276400 CTN-UPDATE-EXT.
+276500     EXIT.
+276600*================================================================*
+276700*    カートンＮＯファイル読込み                                  *
+276800*================================================================*
+276900 CTN-READ-RTN                   SECTION.
+277000 CTN-READ-000.
+277100     READ    CTN-F       NEXT
+277200       AT END
+277300         MOVE    'INV'           TO   FLG-INV
+277400         GO      TO              CTN-READ-EXT
+277500     END-READ.
+277600*
+277700     IF      CTN-TKC             =    SPA-442-ACCO
+277800        AND  CTN-INO             =    SPA-442-INVO
+277900        AND  CTN-DNO             =    SPA-443-DENO (IX1)
+278000        AND  CTN-KBN             =    SPACE
+278100        AND  CTN-SNM             =    SPA-443-SEIN (IX1)
+278200         CONTINUE
+278300     ELSE
+278400         MOVE    'INV'           TO   FLG-INV
+278500     END-IF.
+278600 CTN-READ-EXT.
+278700     EXIT.
+278800*================================================================*
+278900*    アトリビュートのセット                                      *
+279000*================================================================*
+279100 ATTR-SET-RTN                   SECTION.
+279200 ATTR-SET-000.
+279300     MOVE    'A'                   TO   O0443-PAGE-C
+279400                                        O0443-INVO-C
+279500                                        O0443-ACCO-C
+279600                                        O0443-TUKA-C.
+279700* 明細部
+279800     IF      SPA-TRNKBN      =  2
+279900             MOVE   'P'            TO   WRK-ATTR
+280000     ELSE    MOVE   'A'            TO   WRK-ATTR
+280100     END-IF.
+280200     PERFORM VARYING         IX1     FROM    1   BY  1
+280300             UNTIL           IX1     >       5
+280400             MOVE   WRK-ATTR       TO   I0443-KBN-C  (IX1)
+280500                                        I0443-DENO-C (IX1)
+280600                                        I0443-SEIN-C (IX1)
+280700                                        I0443-TANC-C (IX1)
+280800                                        I0443-CASE-C (IX1)
+280900                                        I0443-ILNO-C (IX1)
+281000                                        I0443-SEL-C  (IX1)
+281100                                        I0443-PONO-C (IX1)
+281200                                        I0443-PEDA-C (IX1)
+281300                                        I0443-SURY-C (IX1)
+281400                                        I0443-PN-C   (IX1)
+281500                                        I0443-TANK-C (IX1)
+281600             MOVE   'A'            TO   O0443-TANN-C (IX1)
+281700                                        O0443-EMSG-C (IX1)
+281800        IF   SPA-442-MODE  NOT =  'ADD'  AND  'UPD'
+281900             MOVE   'P'            TO   I0443-SEL-C  (IX1)
+282000        END-IF
+282100        PERFORM VARYING         IX2     FROM    1   BY  1
+282200                UNTIL           IX2     >       3
+282300             MOVE   WRK-ATTR       TO   I0443-SNO-C (IX1 IX2)
+282400                                        I0443-ENO-C (IX1 IX2)
+282500                                        I0443-CSU-C (IX1 IX2)
+282600        END-PERFORM
+282700     END-PERFORM.
+282800* 確認
+282900     IF      SPA-TRNKBN      =  2
+283000             MOVE   SPACE          TO   I0443-KAKU-B
+283100             MOVE   'A'            TO   I0443-KAKU-C
+283200     ELSE
+283300             MOVE   SPACE          TO   I0443-KAKU-B
+283400             MOVE   'P'            TO   I0443-KAKU-C
+283500     END-IF.
+283600* ＰＦキー案内
+283700     MOVE    SPACE                 TO   O0443-MSGTBL-G.
+283800     PERFORM    VARYING    IX1    FROM    1    BY    1
+283900                  UNTIL    IX1       >    12
+284000        MOVE    'A'                TO   O0443-MSGKEY-C(IX1)
+284100                                        O0443-MSGINF-C(IX1)
+284200     END-PERFORM.
+284300     MOVE    'PF4 '                TO   O0443-MSGKEY(4).
+284400     MOVE    NC'取消'              TO   O0443-MSGINF(4).
+284500     IF     (SPA-TRNKBN         =   1
+284600         AND SPA-442-MODE       =   'ADD'   OR  'UPD')
+284700       OR   (SPA-TRNKBN         =   2
+284800         AND SPA-442-MODE   NOT =   'ADD'  AND  'UPD')
+284900             MOVE    'PF7 '        TO   O0443-MSGKEY(7)
+285000             MOVE    NC'前頁'      TO   O0443-MSGINF(7)
+285100             MOVE    'PF8 '        TO   O0443-MSGKEY(8)
+285200             MOVE    NC'次頁'      TO   O0443-MSGINF(8)
+285300     END-IF.
+285400 ATTR-SET-EXT.
+285500     EXIT.
+285600*================================================================*
+285700*    画面読込み　                                                *
+285800*================================================================*
+285900 DCREAD-RTN                      SECTION.
+286000 DCREAD-000.
+286100     READ    DC-FILE   AT   END  GO  TO  M000-END.
+286200     MOVE    DC-IOREC            TO   P5504430.
+286300     MOVE    '1'                 TO   DCFILE-OPEN-FLG.
+286400*
+286500     IF      ANY-KIND         =  'APL'
+286600            MOVE  ZERO              TO    SPA-TRNKBN
+286700     END-IF.
+286800*
+286900 DCREAD-EXT.
+287000     EXIT.
+287100*================================================================*
+287200*    画面出力                                                    *
+287300*================================================================*
+287400 DCWRITE-RTN                     SECTION.
+287500 DCWRITE-000.
+287600*
+287700     MOVE    'A'                 TO   O0443-SYACD-C.
+287800     MOVE    SPA-SCD             TO   O0443-SYACD.
+287900*
+288000     MOVE   SPACE                TO    O0443-MESSEGE.
+288100     MOVE   'A'                  TO    O0443-MESSEGE-C.
+288200     IF     FLG-ERR      =  SPACE   AND
+288300            MSG-CD   NOT =  ZERO
+288400            MOVE  DCMSG55M(MSG-CD)  TO    O0443-MESSEGE
+288500            MOVE  'A'               TO    O0443-MESSEGE-C
+288600     END-IF.
+288700     IF     FLG-ERR  NOT =  SPACE   AND
+288800            MSG-CD   NOT =  ZERO
+288900            MOVE  DCMSG55E(MSG-CD)  TO    O0443-MESSEGE
+289000            MOVE  'D'               TO    O0443-MESSEGE-C
+289100     END-IF.
+289200*
+289300     EVALUATE  FLG-END
+289400               WHEN   'END'        GO   TO   DCWRITE-010
+289500               WHEN   'APL'        GO   TO   DCWRITE-020
+289600               WHEN   OTHER        GO   TO   DCWRITE-030
+289700     END-EVALUATE.
+289800*
+289900 DCWRITE-010.
+290000     MOVE  '1'                   TO   SPA-DSPFLG.
+290100     MOVE  SPACE                 TO   ANY-CTR-AREA.
+290200     MOVE  'M5504420'            TO   ANY-DEST1.
+290300     MOVE  'APL'                 TO   ANY-KIND.
+290400     MOVE  'X'                   TO   ANY-MSG.
+290500     WRITE DC-IOREC            FROM   OUT-AREA.
+290600     GO          TO                   DCWRITE-EXT.
+290700*
+290800 DCWRITE-020.
+290900     MOVE  SPACE                 TO   ANY-CTR-AREA.
+291000     MOVE  'M5504440'            TO   ANY-DEST1.
+291100     MOVE  'APL'                 TO   ANY-KIND.
+291200     MOVE  'X'                   TO   ANY-MSG.
+291300     WRITE DC-IOREC            FROM   OUT-AREA.
+291400     GO          TO                   DCWRITE-EXT.
+291500*
+291600 DCWRITE-030.
+291700     MOVE  SPACE                 TO   ANY-CTR-AREA.
+291800     MOVE  'P5504430'            TO   ANY-FORMAT.
+291900     MOVE  'DSP'                 TO   ANY-KIND.
+292000     WRITE DC-IOREC            FROM   P5504430.
+292100 DCWRITE-EXT.
+292200     EXIT.
+292300*
+292400*  材料コード使用時、社内注番にてＵＪの備考品名ＧＥＴ
+292500*
+292600 HKT-SET-RTN             SECTION.
+292700 HKT-SET-000.
+292800*
+292900          MOVE  SPA-443-NTB (IX1)  TO  HUJ-NTB.
+293000          MOVE  '1'                TO  HUJ-TTE.
+293100          MOVE  SPA-442-ACCO       TO  HUJ-TKC.
+293200          MOVE  'HHHYYY'           TO  HUJ-ZBC.
+293300          MOVE  SPA-443-SCO (IX1)  TO  HUJ-SCD.
+293400          GET   ANY      'UJRD'.
+293500          IF  DB-EXCEPTION   IS   13
+293600                             GO TO HKT-SET-ERR.
+293700 HKT-SET-001.
+293800     IF    HUJ-BKO = SPACE
+293900           MOVE  'ｾｲﾋﾝﾒｲ ﾄｳﾛｸ ﾅｼ' TO O0443-EMSG(IX1)
+294000                                         GO TO HKT-SET-EXT.
+294100* 99/07/28 START  CUT ﾊｽﾞｼ
+294200*     MOVE    HUJ-BKO                 TO   HKT-KEY
+294300*     MOVE     ZERO         TO    WC.
+294400*     PERFORM  VARYING  WD  FROM  1 BY 1  UNTIL ( WD > 20 )
+294500*         IF  HUJ-BKO (WD:1) = ' ' OR  '-'
+294600*             THEN  CONTINUE
+294700*             ELSE  ADD   1  TO  WC
+294800*                   MOVE  HUJ-BKO(WD:1)  TO  WRK-SUZ(WC:1)
+294900*         END-IF
+295000*     END-PERFORM.
+295100*     MOVE  WRK-SUZ   TO  HKT-KEY.
+295200*     START HKT-F KEY  IS  NOT  <  HKT-KEY
+295300*           INVALID   KEY          GO  TO   HKT-SET-002.
+295400*     READ    HKT-F NEXT AT END  GO  TO   HKT-SET-002.
+295500*     IF      HKT-KEY  NOT =  WRK-SUZ     GO  TO  HKT-SET-002.
+295600*     MOVE    HKT-MCD      TO   WRK-MCD.
+295700* 99/07/29 ADD END
+295800**      READ    HKT-F
+295900**        INVALID
+296000***          MOVE  'ﾄｳﾛｸ ｾｲﾋﾝ ｴﾗ- ｻｲﾄｳﾛｸ' TO O0443-EMSG(IX1)
+296100**              GO     TO   HKT-SET-002
+296200**        NOT INVALID
+296300**              MOVE   HKT-MCD      TO   WRK-MCD
+296400**      END-READ.
+296500* 99/07/28 END
+296600 HKT-SET-002.
+296700*    MOVE  'OK'     TO  FLG-CHK.                                        JF
+296800     MOVE  HUJ-BKO  TO  O0443-EMSG(IX1).
+296900     GO    TO       HKT-SET-EXT.
+297000 HKT-SET-ERR.
+297100     MOVE  'ｾﾝｺｳﾋﾝ ﾉ ﾀﾒ ﾋﾝﾒｲﾄｳﾛｸ' TO O0443-EMSG(IX1).
+297200 HKT-SET-EXT.
+297300     EXIT.
+297400**********************
+297500*  テーブルセット処理
+297600**********************
+297700 TBL-SET-RTN          SECTION.
+297800*
+297900     MOVE  HIGH-VALUE       TO      TBL-AREA.
+298000     SET   IDX              TO      1.
+298100     PERFORM     DIA-READ-RTN.
+298200 TBL-SET-010.
+298300     IF  DIA-FLG       =   'END'
+298400         GO     TO         TBL-SET-EXT.
+298500     IF  IDX     >     30
+298600         DISPLAY  '*** M5504430 TBL-OVER?? **'  UPON  CONSOLE
+298700***      MOVE   'END'      TO       DIA-FLG
+298800         GO     TO         TBL-SET-EXT.
+298900     MOVE   DIA-KCD    TO    TBL-KCD (IDX).
+299000     SET   IDX    UP  BY  1.
+299100*
+299200     PERFORM     DIA-READ-RTN.
+299300     GO    TO    TBL-SET-010.
+299400*
+299500 TBL-SET-EXT.
+299600     EXIT.
+299700**********************
+299800*  テーブルサーチ処理
+299900**********************
+300000 TBL-SEARCH-RTN       SECTION.
+300100     MOVE  '  '  TO   FLG-3F.
+300110     SET   IDX   TO   1.
+300200     SEARCH  TBL-KCD-G
+300300***>FCの当期と比較
+300400          WHEN  HFC-KCD (2)(1:4)   =   TBL-KCD (IDX)
+300500                MOVE  'OK'             TO  FLG-3F
+301100          WHEN  TBL-KCD (IDX)  =  HIGH-VALUE
+301200                CONTINUE
+301300     END-SEARCH.
+301400 TBL-SEARCH-EXT.
+301500     EXIT.
+301600**************************************
+301700*    製品グループテーブルＲＥＡＤ    *
+301800**************************************
+301900 DIA-READ-RTN               SECTION.
+302000 DIA-READ-10.
+302100*
+302200     READ  DIA
+302300         AT  END
+302400             MOVE  'END'    TO  DIA-FLG
+302500             GO    TO       DIA-READ-EXT
+302600     END-READ.
+302700     ADD   1                TO  DIA-CNT.
+302800 DIA-READ-EXT.
+302900     EXIT.
+303000*
+303100*--< ＄建変換サブルーチン >                                       980326
+303200     COPY   SBRATCHK.                                             980326
+303300*-----------------------------<< M5504430 END >>-----------------*
+
